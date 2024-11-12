@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F36D3F62CD8792700414292 /* DeviceControlBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36D3F52CD8792700414292 /* DeviceControlBean.swift */; };
+		9F36D3F82CE1A45400414292 /* ReceiveControlBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36D3F72CE1A45400414292 /* ReceiveControlBean.swift */; };
+		9F50E6232CC6360C0032C4FF /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50E6222CC6360C0032C4FF /* LoginPage.swift */; };
+		9F50E6252CC63E5C0032C4FF /* VerCodeBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50E6242CC63E5C0032C4FF /* VerCodeBean.swift */; };
+		9F50E6272CC63F140032C4FF /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50E6262CC63F140032C4FF /* LoginVM.swift */; };
+		9F50E6292CC657230032C4FF /* LoginBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50E6282CC657230032C4FF /* LoginBean.swift */; };
+		9F79EA7C2CC87E57008BFD0E /* VerCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79EA7B2CC87E57008BFD0E /* VerCodeError.swift */; };
+		9F79EA7F2CC8888E008BFD0E /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79EA7E2CC8888E008BFD0E /* BaseResponse.swift */; };
+		9F79EA832CC89092008BFD0E /* NetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79EA822CC89092008BFD0E /* NetworkErrorHandler.swift */; };
+		9F7BABEB2CD462AB0028E6CB /* DeviceControlPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7BABEA2CD462AB0028E6CB /* DeviceControlPage.swift */; };
+		9F7BABED2CD464D60028E6CB /* DeviceControlVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7BABEC2CD464D60028E6CB /* DeviceControlVM.swift */; };
+		9F8B651E2CC745B900F28DA0 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B651D2CC745B900F28DA0 /* Toast.swift */; };
+		9F8B65222CC746A600F28DA0 /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65212CC746A600F28DA0 /* RegisterPage.swift */; };
+		9F8B65242CC74BC100F28DA0 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65232CC74BC100F28DA0 /* RegisterVM.swift */; };
+		9F8B65262CC7812600F28DA0 /* ContactVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65252CC7812600F28DA0 /* ContactVM.swift */; };
+		9F8B65282CC78F6000F28DA0 /* UserBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65272CC78F6000F28DA0 /* UserBean.swift */; };
+		9F8B652A2CC7914300F28DA0 /* MeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65292CC7914300F28DA0 /* MeVM.swift */; };
+		9FCE33722CC6064D00D2D8EC /* tasongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33712CC6064D00D2D8EC /* tasongApp.swift */; };
+		9FCE33742CC6064D00D2D8EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33732CC6064D00D2D8EC /* ContentView.swift */; };
+		9FCE33792CC6064E00D2D8EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE33782CC6064E00D2D8EC /* Preview Assets.xcassets */; };
+		9FCE33AA2CC6086700D2D8EC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33812CC6086700D2D8EC /* Config.swift */; };
+		9FCE33AB2CC6086700D2D8EC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33832CC6086700D2D8EC /* AppState.swift */; };
+		9FCE33AC2CC6086700D2D8EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE33842CC6086700D2D8EC /* Assets.xcassets */; };
+		9FCE33AD2CC6086700D2D8EC /* MyNetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33852CC6086700D2D8EC /* MyNetWorkService.swift */; };
+		9FCE33AE2CC6086700D2D8EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE33872CC6086700D2D8EC /* Localizable.xcstrings */; };
+		9FCE33AF2CC6086700D2D8EC /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33882CC6086700D2D8EC /* NavigationDestination.swift */; };
+		9FCE33B02CC6086700D2D8EC /* MyNetWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE338A2CC6086700D2D8EC /* MyNetWorkRepository.swift */; };
+		9FCE33B12CC6086700D2D8EC /* MePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE338C2CC6086700D2D8EC /* MePage.swift */; };
+		9FCE33B22CC6086700D2D8EC /* DeviceAllBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE338E2CC6086700D2D8EC /* DeviceAllBean.swift */; };
+		9FCE33B32CC6086700D2D8EC /* DeviceChartBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE338F2CC6086700D2D8EC /* DeviceChartBean.swift */; };
+		9FCE33B42CC6086700D2D8EC /* DeviceDataBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33902CC6086700D2D8EC /* DeviceDataBean.swift */; };
+		9FCE33B52CC6086700D2D8EC /* DeviceImageBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33912CC6086700D2D8EC /* DeviceImageBean.swift */; };
+		9FCE33B62CC6086700D2D8EC /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33922CC6086700D2D8EC /* DeviceType.swift */; };
+		9FCE33B72CC6086700D2D8EC /* ContactPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33942CC6086700D2D8EC /* ContactPage.swift */; };
+		9FCE33B82CC6086700D2D8EC /* DeviceDataPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33962CC6086700D2D8EC /* DeviceDataPage.swift */; };
+		9FCE33B92CC6086700D2D8EC /* DeviceDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33972CC6086700D2D8EC /* DeviceDataVM.swift */; };
+		9FCE33BA2CC6086700D2D8EC /* DeviceDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33982CC6086700D2D8EC /* DeviceDetailPage.swift */; };
+		9FCE33BB2CC6086700D2D8EC /* DeviceDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33992CC6086700D2D8EC /* DeviceDetailVM.swift */; };
+		9FCE33BC2CC6086700D2D8EC /* DevicePhotoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE339A2CC6086700D2D8EC /* DevicePhotoPage.swift */; };
+		9FCE33BD2CC6086700D2D8EC /* DevicePhotoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE339B2CC6086700D2D8EC /* DevicePhotoVM.swift */; };
+		9FCE33BF2CC6086700D2D8EC /* DeviceStatVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE339D2CC6086700D2D8EC /* DeviceStatVM.swift */; };
+		9FCE33C02CC6086700D2D8EC /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE339F2CC6086700D2D8EC /* HomePage.swift */; };
+		9FCE33C12CC6086700D2D8EC /* HomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A02CC6086700D2D8EC /* HomePageVM.swift */; };
+		9FCE33C22CC6086700D2D8EC /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A22CC6086700D2D8EC /* MainPage.swift */; };
+		9FCE33C32CC6086700D2D8EC /* SplashPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A42CC6086700D2D8EC /* SplashPage.swift */; };
+		9FCE33C42CC6086700D2D8EC /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A52CC6086700D2D8EC /* SplashVM.swift */; };
+		9FCE33C52CC6086700D2D8EC /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A82CC6086700D2D8EC /* BaseViewModel.swift */; };
+		9FCE33D02CC6172900D2D8EC /* DeviceStatPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33CF2CC6172900D2D8EC /* DeviceStatPage.swift */; };
+		A662C9A9ACC5635592CD3F25 /* Pods_tasong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51CECA81FF3DE30D49FEC9B /* Pods_tasong.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		280F9A7DF6BF114356D8CA24 /* Pods-tasong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasong.release.xcconfig"; path = "Target Support Files/Pods-tasong/Pods-tasong.release.xcconfig"; sourceTree = "<group>"; };
+		9F36D3F52CD8792700414292 /* DeviceControlBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlBean.swift; sourceTree = "<group>"; };
+		9F36D3F72CE1A45400414292 /* ReceiveControlBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveControlBean.swift; sourceTree = "<group>"; };
+		9F50E6222CC6360C0032C4FF /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		9F50E6242CC63E5C0032C4FF /* VerCodeBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerCodeBean.swift; sourceTree = "<group>"; };
+		9F50E6262CC63F140032C4FF /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		9F50E6282CC657230032C4FF /* LoginBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBean.swift; sourceTree = "<group>"; };
+		9F79EA7B2CC87E57008BFD0E /* VerCodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerCodeError.swift; sourceTree = "<group>"; };
+		9F79EA7E2CC8888E008BFD0E /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		9F79EA822CC89092008BFD0E /* NetworkErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorHandler.swift; sourceTree = "<group>"; };
+		9F7BABEA2CD462AB0028E6CB /* DeviceControlPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlPage.swift; sourceTree = "<group>"; };
+		9F7BABEC2CD464D60028E6CB /* DeviceControlVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlVM.swift; sourceTree = "<group>"; };
+		9F8B651D2CC745B900F28DA0 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		9F8B65212CC746A600F28DA0 /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
+		9F8B65232CC74BC100F28DA0 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		9F8B65252CC7812600F28DA0 /* ContactVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVM.swift; sourceTree = "<group>"; };
+		9F8B65272CC78F6000F28DA0 /* UserBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBean.swift; sourceTree = "<group>"; };
+		9F8B65292CC7914300F28DA0 /* MeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVM.swift; sourceTree = "<group>"; };
+		9FCE336E2CC6064D00D2D8EC /* tasong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FCE33712CC6064D00D2D8EC /* tasongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasongApp.swift; sourceTree = "<group>"; };
+		9FCE33732CC6064D00D2D8EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9FCE33782CC6064E00D2D8EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9FCE33812CC6086700D2D8EC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		9FCE33832CC6086700D2D8EC /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = ../../mengchuang/mengchuang/AppState.swift; sourceTree = "<group>"; };
+		9FCE33842CC6086700D2D8EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../mengchuang/mengchuang/Assets.xcassets; sourceTree = "<group>"; };
+		9FCE33852CC6086700D2D8EC /* MyNetWorkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetWorkService.swift; sourceTree = "<group>"; };
+		9FCE33872CC6086700D2D8EC /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = ../../mengchuang/mengchuang/Localizable.xcstrings; sourceTree = "<group>"; };
+		9FCE33882CC6086700D2D8EC /* NavigationDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
+		9FCE338A2CC6086700D2D8EC /* MyNetWorkRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetWorkRepository.swift; sourceTree = "<group>"; };
+		9FCE338C2CC6086700D2D8EC /* MePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MePage.swift; sourceTree = "<group>"; };
+		9FCE338E2CC6086700D2D8EC /* DeviceAllBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceAllBean.swift; sourceTree = "<group>"; };
+		9FCE338F2CC6086700D2D8EC /* DeviceChartBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceChartBean.swift; sourceTree = "<group>"; };
+		9FCE33902CC6086700D2D8EC /* DeviceDataBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataBean.swift; sourceTree = "<group>"; };
+		9FCE33912CC6086700D2D8EC /* DeviceImageBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceImageBean.swift; sourceTree = "<group>"; };
+		9FCE33922CC6086700D2D8EC /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		9FCE33942CC6086700D2D8EC /* ContactPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPage.swift; sourceTree = "<group>"; };
+		9FCE33962CC6086700D2D8EC /* DeviceDataPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataPage.swift; sourceTree = "<group>"; };
+		9FCE33972CC6086700D2D8EC /* DeviceDataVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataVM.swift; sourceTree = "<group>"; };
+		9FCE33982CC6086700D2D8EC /* DeviceDetailPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailPage.swift; sourceTree = "<group>"; };
+		9FCE33992CC6086700D2D8EC /* DeviceDetailVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailVM.swift; sourceTree = "<group>"; };
+		9FCE339A2CC6086700D2D8EC /* DevicePhotoPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePhotoPage.swift; sourceTree = "<group>"; };
+		9FCE339B2CC6086700D2D8EC /* DevicePhotoVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePhotoVM.swift; sourceTree = "<group>"; };
+		9FCE339D2CC6086700D2D8EC /* DeviceStatVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatVM.swift; sourceTree = "<group>"; };
+		9FCE339F2CC6086700D2D8EC /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		9FCE33A02CC6086700D2D8EC /* HomePageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageVM.swift; sourceTree = "<group>"; };
+		9FCE33A22CC6086700D2D8EC /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		9FCE33A42CC6086700D2D8EC /* SplashPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPage.swift; sourceTree = "<group>"; };
+		9FCE33A52CC6086700D2D8EC /* SplashVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
+		9FCE33A82CC6086700D2D8EC /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		9FCE33C82CC60A2E00D2D8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9FCE33CF2CC6172900D2D8EC /* DeviceStatPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatPage.swift; sourceTree = "<group>"; };
+		ECCD896310558FA82E701495 /* Pods-tasong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasong.debug.xcconfig"; path = "Target Support Files/Pods-tasong/Pods-tasong.debug.xcconfig"; sourceTree = "<group>"; };
+		F51CECA81FF3DE30D49FEC9B /* Pods_tasong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tasong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FCE336B2CC6064D00D2D8EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A662C9A9ACC5635592CD3F25 /* Pods_tasong.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7085CD74F66EB8527535756D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F51CECA81FF3DE30D49FEC9B /* Pods_tasong.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F50E6212CC635ED0032C4FF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9F50E6222CC6360C0032C4FF /* LoginPage.swift */,
+				9F50E6262CC63F140032C4FF /* LoginVM.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9F79EA7D2CC88882008BFD0E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9F79EA7E2CC8888E008BFD0E /* BaseResponse.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9F8B65202CC7469200F28DA0 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B65212CC746A600F28DA0 /* RegisterPage.swift */,
+				9F8B65232CC74BC100F28DA0 /* RegisterVM.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		9FCE33652CC6064D00D2D8EC = {
+			isa = PBXGroup;
+			children = (
+				9FCE33702CC6064D00D2D8EC /* tasong */,
+				9FCE336F2CC6064D00D2D8EC /* Products */,
+				D15BF5DC83B89CB6C738B1C5 /* Pods */,
+				7085CD74F66EB8527535756D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9FCE336F2CC6064D00D2D8EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE336E2CC6064D00D2D8EC /* tasong.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FCE33702CC6064D00D2D8EC /* tasong */ = {
+			isa = PBXGroup;
+			children = (
+				9F79EA7D2CC88882008BFD0E /* Extension */,
+				9FCE33C82CC60A2E00D2D8EC /* Info.plist */,
+				9FCE33832CC6086700D2D8EC /* AppState.swift */,
+				9FCE33842CC6086700D2D8EC /* Assets.xcassets */,
+				9FCE33822CC6086700D2D8EC /* Config */,
+				9FCE33A72CC6086700D2D8EC /* Feature */,
+				9FCE33872CC6086700D2D8EC /* Localizable.xcstrings */,
+				9FCE33892CC6086700D2D8EC /* Navigation */,
+				9FCE338B2CC6086700D2D8EC /* Repository */,
+				9FCE33862CC6086700D2D8EC /* Service */,
+				9FCE33A92CC6086700D2D8EC /* ViewModel */,
+				9FCE33712CC6064D00D2D8EC /* tasongApp.swift */,
+				9FCE33732CC6064D00D2D8EC /* ContentView.swift */,
+				9FCE33772CC6064E00D2D8EC /* Preview Content */,
+				9F8B651D2CC745B900F28DA0 /* Toast.swift */,
+			);
+			path = tasong;
+			sourceTree = "<group>";
+		};
+		9FCE33772CC6064E00D2D8EC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33782CC6064E00D2D8EC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9FCE33822CC6086700D2D8EC /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33812CC6086700D2D8EC /* Config.swift */,
+				9F79EA7B2CC87E57008BFD0E /* VerCodeError.swift */,
+				9F79EA822CC89092008BFD0E /* NetworkErrorHandler.swift */,
+			);
+			name = Config;
+			path = ../../mengchuang/mengchuang/Config;
+			sourceTree = "<group>";
+		};
+		9FCE33862CC6086700D2D8EC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33852CC6086700D2D8EC /* MyNetWorkService.swift */,
+			);
+			name = Service;
+			path = ../../mengchuang/mengchuang/Service;
+			sourceTree = "<group>";
+		};
+		9FCE33892CC6086700D2D8EC /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33882CC6086700D2D8EC /* NavigationDestination.swift */,
+			);
+			name = Navigation;
+			path = ../../mengchuang/mengchuang/Navigation;
+			sourceTree = "<group>";
+		};
+		9FCE338B2CC6086700D2D8EC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE338A2CC6086700D2D8EC /* MyNetWorkRepository.swift */,
+			);
+			name = Repository;
+			path = ../../mengchuang/mengchuang/Repository;
+			sourceTree = "<group>";
+		};
+		9FCE338D2CC6086700D2D8EC /* About */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE338C2CC6086700D2D8EC /* MePage.swift */,
+				9F8B65292CC7914300F28DA0 /* MeVM.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		9FCE33932CC6086700D2D8EC /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE338E2CC6086700D2D8EC /* DeviceAllBean.swift */,
+				9FCE338F2CC6086700D2D8EC /* DeviceChartBean.swift */,
+				9FCE33902CC6086700D2D8EC /* DeviceDataBean.swift */,
+				9FCE33912CC6086700D2D8EC /* DeviceImageBean.swift */,
+				9FCE33922CC6086700D2D8EC /* DeviceType.swift */,
+				9F50E6242CC63E5C0032C4FF /* VerCodeBean.swift */,
+				9F50E6282CC657230032C4FF /* LoginBean.swift */,
+				9F8B65272CC78F6000F28DA0 /* UserBean.swift */,
+				9F36D3F52CD8792700414292 /* DeviceControlBean.swift */,
+				9F36D3F72CE1A45400414292 /* ReceiveControlBean.swift */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		9FCE33952CC6086700D2D8EC /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33942CC6086700D2D8EC /* ContactPage.swift */,
+				9F8B65252CC7812600F28DA0 /* ContactVM.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		9FCE339E2CC6086700D2D8EC /* DeviceDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33962CC6086700D2D8EC /* DeviceDataPage.swift */,
+				9FCE33972CC6086700D2D8EC /* DeviceDataVM.swift */,
+				9FCE33982CC6086700D2D8EC /* DeviceDetailPage.swift */,
+				9FCE33992CC6086700D2D8EC /* DeviceDetailVM.swift */,
+				9FCE339A2CC6086700D2D8EC /* DevicePhotoPage.swift */,
+				9FCE339B2CC6086700D2D8EC /* DevicePhotoVM.swift */,
+				9FCE339D2CC6086700D2D8EC /* DeviceStatVM.swift */,
+				9FCE33CF2CC6172900D2D8EC /* DeviceStatPage.swift */,
+				9F7BABEA2CD462AB0028E6CB /* DeviceControlPage.swift */,
+				9F7BABEC2CD464D60028E6CB /* DeviceControlVM.swift */,
+			);
+			path = DeviceDetail;
+			sourceTree = "<group>";
+		};
+		9FCE33A12CC6086700D2D8EC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE339F2CC6086700D2D8EC /* HomePage.swift */,
+				9FCE33A02CC6086700D2D8EC /* HomePageVM.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9FCE33A32CC6086700D2D8EC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33A22CC6086700D2D8EC /* MainPage.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9FCE33A62CC6086700D2D8EC /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33A42CC6086700D2D8EC /* SplashPage.swift */,
+				9FCE33A52CC6086700D2D8EC /* SplashVM.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		9FCE33A72CC6086700D2D8EC /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				9F8B65202CC7469200F28DA0 /* Register */,
+				9F50E6212CC635ED0032C4FF /* Login */,
+				9FCE338D2CC6086700D2D8EC /* About */,
+				9FCE33932CC6086700D2D8EC /* Bean */,
+				9FCE33952CC6086700D2D8EC /* Contact */,
+				9FCE339E2CC6086700D2D8EC /* DeviceDetail */,
+				9FCE33A12CC6086700D2D8EC /* Home */,
+				9FCE33A32CC6086700D2D8EC /* Main */,
+				9FCE33A62CC6086700D2D8EC /* Splash */,
+			);
+			name = Feature;
+			path = ../../mengchuang/mengchuang/Feature;
+			sourceTree = "<group>";
+		};
+		9FCE33A92CC6086700D2D8EC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9FCE33A82CC6086700D2D8EC /* BaseViewModel.swift */,
+			);
+			name = ViewModel;
+			path = ../../mengchuang/mengchuang/ViewModel;
+			sourceTree = "<group>";
+		};
+		D15BF5DC83B89CB6C738B1C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECCD896310558FA82E701495 /* Pods-tasong.debug.xcconfig */,
+				280F9A7DF6BF114356D8CA24 /* Pods-tasong.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FCE336D2CC6064D00D2D8EC /* tasong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FCE337C2CC6064E00D2D8EC /* Build configuration list for PBXNativeTarget "tasong" */;
+			buildPhases = (
+				250CF8D4F2DF84F6B1825C23 /* [CP] Check Pods Manifest.lock */,
+				9FCE336A2CC6064D00D2D8EC /* Sources */,
+				9FCE336B2CC6064D00D2D8EC /* Frameworks */,
+				9FCE336C2CC6064D00D2D8EC /* Resources */,
+				B28E115703DDB072F5572CE3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tasong;
+			productName = tasong;
+			productReference = 9FCE336E2CC6064D00D2D8EC /* tasong.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FCE33662CC6064D00D2D8EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					9FCE336D2CC6064D00D2D8EC = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 9FCE33692CC6064D00D2D8EC /* Build configuration list for PBXProject "tasong" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9FCE33652CC6064D00D2D8EC;
+			productRefGroup = 9FCE336F2CC6064D00D2D8EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FCE336D2CC6064D00D2D8EC /* tasong */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FCE336C2CC6064D00D2D8EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FCE33792CC6064E00D2D8EC /* Preview Assets.xcassets in Resources */,
+				9FCE33AC2CC6086700D2D8EC /* Assets.xcassets in Resources */,
+				9FCE33AE2CC6086700D2D8EC /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		250CF8D4F2DF84F6B1825C23 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tasong-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B28E115703DDB072F5572CE3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tasong/Pods-tasong-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tasong/Pods-tasong-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tasong/Pods-tasong-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FCE336A2CC6064D00D2D8EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FCE33B32CC6086700D2D8EC /* DeviceChartBean.swift in Sources */,
+				9F8B65262CC7812600F28DA0 /* ContactVM.swift in Sources */,
+				9F8B65222CC746A600F28DA0 /* RegisterPage.swift in Sources */,
+				9FCE33C02CC6086700D2D8EC /* HomePage.swift in Sources */,
+				9FCE33B42CC6086700D2D8EC /* DeviceDataBean.swift in Sources */,
+				9F7BABED2CD464D60028E6CB /* DeviceControlVM.swift in Sources */,
+				9F50E6232CC6360C0032C4FF /* LoginPage.swift in Sources */,
+				9FCE33B62CC6086700D2D8EC /* DeviceType.swift in Sources */,
+				9F79EA832CC89092008BFD0E /* NetworkErrorHandler.swift in Sources */,
+				9FCE33D02CC6172900D2D8EC /* DeviceStatPage.swift in Sources */,
+				9FCE33B22CC6086700D2D8EC /* DeviceAllBean.swift in Sources */,
+				9FCE33742CC6064D00D2D8EC /* ContentView.swift in Sources */,
+				9FCE33AD2CC6086700D2D8EC /* MyNetWorkService.swift in Sources */,
+				9F36D3F62CD8792700414292 /* DeviceControlBean.swift in Sources */,
+				9FCE33C42CC6086700D2D8EC /* SplashVM.swift in Sources */,
+				9FCE33722CC6064D00D2D8EC /* tasongApp.swift in Sources */,
+				9F8B65282CC78F6000F28DA0 /* UserBean.swift in Sources */,
+				9FCE33B02CC6086700D2D8EC /* MyNetWorkRepository.swift in Sources */,
+				9F7BABEB2CD462AB0028E6CB /* DeviceControlPage.swift in Sources */,
+				9F79EA7F2CC8888E008BFD0E /* BaseResponse.swift in Sources */,
+				9FCE33AA2CC6086700D2D8EC /* Config.swift in Sources */,
+				9FCE33BC2CC6086700D2D8EC /* DevicePhotoPage.swift in Sources */,
+				9FCE33B72CC6086700D2D8EC /* ContactPage.swift in Sources */,
+				9FCE33C32CC6086700D2D8EC /* SplashPage.swift in Sources */,
+				9F50E6252CC63E5C0032C4FF /* VerCodeBean.swift in Sources */,
+				9FCE33BD2CC6086700D2D8EC /* DevicePhotoVM.swift in Sources */,
+				9F50E6272CC63F140032C4FF /* LoginVM.swift in Sources */,
+				9F8B651E2CC745B900F28DA0 /* Toast.swift in Sources */,
+				9FCE33B92CC6086700D2D8EC /* DeviceDataVM.swift in Sources */,
+				9FCE33C52CC6086700D2D8EC /* BaseViewModel.swift in Sources */,
+				9FCE33AF2CC6086700D2D8EC /* NavigationDestination.swift in Sources */,
+				9FCE33B52CC6086700D2D8EC /* DeviceImageBean.swift in Sources */,
+				9FCE33B12CC6086700D2D8EC /* MePage.swift in Sources */,
+				9F8B652A2CC7914300F28DA0 /* MeVM.swift in Sources */,
+				9FCE33BA2CC6086700D2D8EC /* DeviceDetailPage.swift in Sources */,
+				9F50E6292CC657230032C4FF /* LoginBean.swift in Sources */,
+				9F36D3F82CE1A45400414292 /* ReceiveControlBean.swift in Sources */,
+				9F79EA7C2CC87E57008BFD0E /* VerCodeError.swift in Sources */,
+				9F8B65242CC74BC100F28DA0 /* RegisterVM.swift in Sources */,
+				9FCE33BF2CC6086700D2D8EC /* DeviceStatVM.swift in Sources */,
+				9FCE33C22CC6086700D2D8EC /* MainPage.swift in Sources */,
+				9FCE33C12CC6086700D2D8EC /* HomePageVM.swift in Sources */,
+				9FCE33BB2CC6086700D2D8EC /* DeviceDetailVM.swift in Sources */,
+				9FCE33AB2CC6086700D2D8EC /* AppState.swift in Sources */,
+				9FCE33B82CC6086700D2D8EC /* DeviceDataPage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9FCE337A2CC6064E00D2D8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9FCE337B2CC6064E00D2D8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9FCE337D2CC6064E00D2D8EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECCD896310558FA82E701495 /* Pods-tasong.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tasong/Preview Content\"";
+				DEVELOPMENT_TEAM = 3B4TXPLNW7;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tasong/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mengchuang.info;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9FCE337E2CC6064E00D2D8EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280F9A7DF6BF114356D8CA24 /* Pods-tasong.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tasong/Preview Content\"";
+				DEVELOPMENT_TEAM = 3B4TXPLNW7;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = tasong/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mengchuang.info;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FCE33692CC6064D00D2D8EC /* Build configuration list for PBXProject "tasong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FCE337A2CC6064E00D2D8EC /* Debug */,
+				9FCE337B2CC6064E00D2D8EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FCE337C2CC6064E00D2D8EC /* Build configuration list for PBXNativeTarget "tasong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FCE337D2CC6064E00D2D8EC /* Debug */,
+				9FCE337E2CC6064E00D2D8EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FCE33662CC6064D00D2D8EC /* Project object */;
+}

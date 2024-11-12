@@ -1,0 +1,8 @@
+${PODS_ROOT}/Target Support Files/Pods-tasong/Pods-tasong-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AAInfographics/AAInfographics.framework
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework

@@ -1,0 +1,59 @@
+PODS:
+  - AAInfographics (9.0.0)
+  - Alamofire (5.10.0)
+  - Kingfisher (8.1.0)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Combine (15.0.0):
+    - Moya/Core
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/ReactiveSwift (15.0.0):
+    - Moya/Core
+    - ReactiveSwift (~> 6.6.1)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
+  - ReactiveSwift (6.6.1)
+  - RxSwift (6.8.0)
+  - Starscream (4.0.8)
+
+DEPENDENCIES:
+  - AAInfographics (from `https://github.com/AAChartModel/AAChartKit-Swift.git`)
+  - Kingfisher (~> 8.0)
+  - Moya (~> 15.0)
+  - Moya/Combine (~> 15.0)
+  - Moya/ReactiveSwift (~> 15.0)
+  - Moya/RxSwift (~> 15.0)
+  - Starscream (~> 4.0.6)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Moya
+    - ReactiveSwift
+    - RxSwift
+    - Starscream
+
+EXTERNAL SOURCES:
+  AAInfographics:
+    :git: https://github.com/AAChartModel/AAChartKit-Swift.git
+
+CHECKOUT OPTIONS:
+  AAInfographics:
+    :commit: 4347535a8240401ce078d7e228b4e8422da4f228
+    :git: https://github.com/AAChartModel/AAChartKit-Swift.git
+
+SPEC CHECKSUMS:
+  AAInfographics: 31fd2891509a97e34693aeaf681daa7b2b4d8c0f
+  Alamofire: cd0b98508df05796dd2ff278f3bb055a631b5390
+  Kingfisher: dfbf20b6249ed4ef6f18d6a96c847bce860bdb95
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  ReactiveSwift: fab34244ad908808dc822bae352a058c8837c4ca
+  RxSwift: 4e28be97cbcfeee614af26d83415febbf2bf6f45
+  Starscream: 19b5533ddb925208db698f0ac508a100b884a1b9
+
+PODFILE CHECKSUM: ed6c6628f38d9099955abdf3457d099919301a7e
+
+COCOAPODS: 1.15.2

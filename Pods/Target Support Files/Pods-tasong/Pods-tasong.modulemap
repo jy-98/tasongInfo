@@ -1,0 +1,6 @@
+framework module Pods_tasong {
+  umbrella header "Pods-tasong-umbrella.h"
+
+  export *
+  module * { export * }
+}
