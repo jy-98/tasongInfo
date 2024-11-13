@@ -7,109 +7,111 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F36D3F62CD8792700414292 /* DeviceControlBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36D3F52CD8792700414292 /* DeviceControlBean.swift */; };
-		9F36D3F82CE1A45400414292 /* ReceiveControlBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F36D3F72CE1A45400414292 /* ReceiveControlBean.swift */; };
-		9F50E6232CC6360C0032C4FF /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50E6222CC6360C0032C4FF /* LoginPage.swift */; };
-		9F50E6252CC63E5C0032C4FF /* VerCodeBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50E6242CC63E5C0032C4FF /* VerCodeBean.swift */; };
-		9F50E6272CC63F140032C4FF /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50E6262CC63F140032C4FF /* LoginVM.swift */; };
-		9F50E6292CC657230032C4FF /* LoginBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F50E6282CC657230032C4FF /* LoginBean.swift */; };
-		9F79EA7C2CC87E57008BFD0E /* VerCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79EA7B2CC87E57008BFD0E /* VerCodeError.swift */; };
 		9F79EA7F2CC8888E008BFD0E /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79EA7E2CC8888E008BFD0E /* BaseResponse.swift */; };
-		9F79EA832CC89092008BFD0E /* NetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79EA822CC89092008BFD0E /* NetworkErrorHandler.swift */; };
-		9F7BABEB2CD462AB0028E6CB /* DeviceControlPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7BABEA2CD462AB0028E6CB /* DeviceControlPage.swift */; };
-		9F7BABED2CD464D60028E6CB /* DeviceControlVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7BABEC2CD464D60028E6CB /* DeviceControlVM.swift */; };
 		9F8B651E2CC745B900F28DA0 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B651D2CC745B900F28DA0 /* Toast.swift */; };
-		9F8B65222CC746A600F28DA0 /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65212CC746A600F28DA0 /* RegisterPage.swift */; };
-		9F8B65242CC74BC100F28DA0 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65232CC74BC100F28DA0 /* RegisterVM.swift */; };
-		9F8B65262CC7812600F28DA0 /* ContactVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65252CC7812600F28DA0 /* ContactVM.swift */; };
-		9F8B65282CC78F6000F28DA0 /* UserBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65272CC78F6000F28DA0 /* UserBean.swift */; };
-		9F8B652A2CC7914300F28DA0 /* MeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B65292CC7914300F28DA0 /* MeVM.swift */; };
 		9FCE33722CC6064D00D2D8EC /* tasongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33712CC6064D00D2D8EC /* tasongApp.swift */; };
 		9FCE33742CC6064D00D2D8EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33732CC6064D00D2D8EC /* ContentView.swift */; };
 		9FCE33792CC6064E00D2D8EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE33782CC6064E00D2D8EC /* Preview Assets.xcassets */; };
-		9FCE33AA2CC6086700D2D8EC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33812CC6086700D2D8EC /* Config.swift */; };
-		9FCE33AB2CC6086700D2D8EC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33832CC6086700D2D8EC /* AppState.swift */; };
-		9FCE33AC2CC6086700D2D8EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE33842CC6086700D2D8EC /* Assets.xcassets */; };
-		9FCE33AD2CC6086700D2D8EC /* MyNetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33852CC6086700D2D8EC /* MyNetWorkService.swift */; };
-		9FCE33AE2CC6086700D2D8EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE33872CC6086700D2D8EC /* Localizable.xcstrings */; };
-		9FCE33AF2CC6086700D2D8EC /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33882CC6086700D2D8EC /* NavigationDestination.swift */; };
-		9FCE33B02CC6086700D2D8EC /* MyNetWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE338A2CC6086700D2D8EC /* MyNetWorkRepository.swift */; };
-		9FCE33B12CC6086700D2D8EC /* MePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE338C2CC6086700D2D8EC /* MePage.swift */; };
-		9FCE33B22CC6086700D2D8EC /* DeviceAllBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE338E2CC6086700D2D8EC /* DeviceAllBean.swift */; };
-		9FCE33B32CC6086700D2D8EC /* DeviceChartBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE338F2CC6086700D2D8EC /* DeviceChartBean.swift */; };
-		9FCE33B42CC6086700D2D8EC /* DeviceDataBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33902CC6086700D2D8EC /* DeviceDataBean.swift */; };
-		9FCE33B52CC6086700D2D8EC /* DeviceImageBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33912CC6086700D2D8EC /* DeviceImageBean.swift */; };
-		9FCE33B62CC6086700D2D8EC /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33922CC6086700D2D8EC /* DeviceType.swift */; };
-		9FCE33B72CC6086700D2D8EC /* ContactPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33942CC6086700D2D8EC /* ContactPage.swift */; };
-		9FCE33B82CC6086700D2D8EC /* DeviceDataPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33962CC6086700D2D8EC /* DeviceDataPage.swift */; };
-		9FCE33B92CC6086700D2D8EC /* DeviceDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33972CC6086700D2D8EC /* DeviceDataVM.swift */; };
-		9FCE33BA2CC6086700D2D8EC /* DeviceDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33982CC6086700D2D8EC /* DeviceDetailPage.swift */; };
-		9FCE33BB2CC6086700D2D8EC /* DeviceDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33992CC6086700D2D8EC /* DeviceDetailVM.swift */; };
-		9FCE33BC2CC6086700D2D8EC /* DevicePhotoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE339A2CC6086700D2D8EC /* DevicePhotoPage.swift */; };
-		9FCE33BD2CC6086700D2D8EC /* DevicePhotoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE339B2CC6086700D2D8EC /* DevicePhotoVM.swift */; };
-		9FCE33BF2CC6086700D2D8EC /* DeviceStatVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE339D2CC6086700D2D8EC /* DeviceStatVM.swift */; };
-		9FCE33C02CC6086700D2D8EC /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE339F2CC6086700D2D8EC /* HomePage.swift */; };
-		9FCE33C12CC6086700D2D8EC /* HomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A02CC6086700D2D8EC /* HomePageVM.swift */; };
-		9FCE33C22CC6086700D2D8EC /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A22CC6086700D2D8EC /* MainPage.swift */; };
-		9FCE33C32CC6086700D2D8EC /* SplashPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A42CC6086700D2D8EC /* SplashPage.swift */; };
-		9FCE33C42CC6086700D2D8EC /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A52CC6086700D2D8EC /* SplashVM.swift */; };
-		9FCE33C52CC6086700D2D8EC /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33A82CC6086700D2D8EC /* BaseViewModel.swift */; };
-		9FCE33D02CC6172900D2D8EC /* DeviceStatPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33CF2CC6172900D2D8EC /* DeviceStatPage.swift */; };
+		9FDA157C2CE471170001998A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA157B2CE471170001998A /* AppState.swift */; };
+		9FDA158A2CE4736E0001998A /* MyNetWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15892CE4736E0001998A /* MyNetWorkRepository.swift */; };
+		9FDA158C2CE473940001998A /* MyNetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA158B2CE473940001998A /* MyNetWorkService.swift */; };
+		9FDA158E2CE473C30001998A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA158D2CE473C30001998A /* BaseViewModel.swift */; };
+		9FDA15902CE4741C0001998A /* SplashPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA158F2CE4741C0001998A /* SplashPage.swift */; };
+		9FDA15922CE474270001998A /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15912CE474270001998A /* SplashVM.swift */; };
+		9FDA15942CE474590001998A /* RegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15932CE474590001998A /* RegisterPage.swift */; };
+		9FDA15962CE4746C0001998A /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15952CE4746C0001998A /* RegisterVM.swift */; };
+		9FDA15982CE474930001998A /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15972CE474930001998A /* MainPage.swift */; };
+		9FDA159A2CE474AE0001998A /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15992CE474AE0001998A /* LoginPage.swift */; };
+		9FDA159C2CE474BA0001998A /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA159B2CE474BA0001998A /* LoginVM.swift */; };
+		9FDA159E2CE474DC0001998A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA159D2CE474DC0001998A /* HomePage.swift */; };
+		9FDA15A02CE474E70001998A /* HomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA159F2CE474E70001998A /* HomePageVM.swift */; };
+		9FDA15A22CE475180001998A /* DeviceControlPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15A12CE475180001998A /* DeviceControlPage.swift */; };
+		9FDA15A42CE475270001998A /* DeviceControlVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15A32CE475270001998A /* DeviceControlVM.swift */; };
+		9FDA15A62CE475370001998A /* DeviceDataPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15A52CE475370001998A /* DeviceDataPage.swift */; };
+		9FDA15A82CE475430001998A /* DeviceDataVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15A72CE475430001998A /* DeviceDataVM.swift */; };
+		9FDA15AA2CE475560001998A /* DeviceDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15A92CE475560001998A /* DeviceDetailPage.swift */; };
+		9FDA15AC2CE475670001998A /* DeviceDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15AB2CE475670001998A /* DeviceDetailVM.swift */; };
+		9FDA15AE2CE475840001998A /* DevicePhotoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15AD2CE475840001998A /* DevicePhotoPage.swift */; };
+		9FDA15B02CE475E30001998A /* DevicePhotoVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15AF2CE475E30001998A /* DevicePhotoVM.swift */; };
+		9FDA15B22CE475EF0001998A /* DeviceStatPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15B12CE475EF0001998A /* DeviceStatPage.swift */; };
+		9FDA15B42CE476310001998A /* DeviceStatVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15B32CE476310001998A /* DeviceStatVM.swift */; };
+		9FDA15B62CE4769E0001998A /* ContactPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15B52CE4769E0001998A /* ContactPage.swift */; };
+		9FDA15B82CE476A90001998A /* ContactVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15B72CE476A90001998A /* ContactVM.swift */; };
+		9FDA15BC2CE477270001998A /* DeviceAllBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15BB2CE477270001998A /* DeviceAllBean.swift */; };
+		9FDA15BE2CE477340001998A /* DeviceChartBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15BD2CE477340001998A /* DeviceChartBean.swift */; };
+		9FDA15C02CE477410001998A /* DeviceControlBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15BF2CE477410001998A /* DeviceControlBean.swift */; };
+		9FDA15C22CE477790001998A /* DeviceDataBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15C12CE477790001998A /* DeviceDataBean.swift */; };
+		9FDA15C62CE4778D0001998A /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15C52CE4778D0001998A /* DeviceType.swift */; };
+		9FDA15C82CE477940001998A /* LoginBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15C72CE477940001998A /* LoginBean.swift */; };
+		9FDA15CA2CE477A90001998A /* ReceiveControlBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15C92CE477A90001998A /* ReceiveControlBean.swift */; };
+		9FDA15CC2CE477B20001998A /* UserBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15CB2CE477B20001998A /* UserBean.swift */; };
+		9FDA15CE2CE477CB0001998A /* VerCodeBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15CD2CE477CB0001998A /* VerCodeBean.swift */; };
+		9FDA15D02CE479610001998A /* DeviceImageBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15CF2CE479610001998A /* DeviceImageBean.swift */; };
+		9FDA15D22CE4797F0001998A /* MePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15D12CE4797F0001998A /* MePage.swift */; };
+		9FDA15D42CE479850001998A /* MeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15D32CE479850001998A /* MeVM.swift */; };
+		9FDA15DB2CE47A250001998A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FDA15DA2CE47A250001998A /* Assets.xcassets */; };
+		9FDA15DD2CE47A770001998A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9FDA15DC2CE47A770001998A /* Localizable.xcstrings */; };
+		9FDA15E02CE47A930001998A /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15DE2CE47A930001998A /* NavigationDestination.swift */; };
+		9FDA15E62CE47DD30001998A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15E12CE47DD30001998A /* Config.swift */; };
+		9FDA15E72CE47DD30001998A /* handleNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15E22CE47DD30001998A /* handleNetworkError.swift */; };
+		9FDA15E82CE47DD30001998A /* NetworkErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15E32CE47DD30001998A /* NetworkErrorHandler.swift */; };
+		9FDA15E92CE47DD30001998A /* VerCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15E42CE47DD30001998A /* VerCodeError.swift */; };
 		A662C9A9ACC5635592CD3F25 /* Pods_tasong.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51CECA81FF3DE30D49FEC9B /* Pods_tasong.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		280F9A7DF6BF114356D8CA24 /* Pods-tasong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasong.release.xcconfig"; path = "Target Support Files/Pods-tasong/Pods-tasong.release.xcconfig"; sourceTree = "<group>"; };
-		9F36D3F52CD8792700414292 /* DeviceControlBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlBean.swift; sourceTree = "<group>"; };
-		9F36D3F72CE1A45400414292 /* ReceiveControlBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveControlBean.swift; sourceTree = "<group>"; };
-		9F50E6222CC6360C0032C4FF /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
-		9F50E6242CC63E5C0032C4FF /* VerCodeBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerCodeBean.swift; sourceTree = "<group>"; };
-		9F50E6262CC63F140032C4FF /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
-		9F50E6282CC657230032C4FF /* LoginBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBean.swift; sourceTree = "<group>"; };
-		9F79EA7B2CC87E57008BFD0E /* VerCodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerCodeError.swift; sourceTree = "<group>"; };
 		9F79EA7E2CC8888E008BFD0E /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
-		9F79EA822CC89092008BFD0E /* NetworkErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorHandler.swift; sourceTree = "<group>"; };
-		9F7BABEA2CD462AB0028E6CB /* DeviceControlPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlPage.swift; sourceTree = "<group>"; };
-		9F7BABEC2CD464D60028E6CB /* DeviceControlVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlVM.swift; sourceTree = "<group>"; };
 		9F8B651D2CC745B900F28DA0 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		9F8B65212CC746A600F28DA0 /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
-		9F8B65232CC74BC100F28DA0 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
-		9F8B65252CC7812600F28DA0 /* ContactVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVM.swift; sourceTree = "<group>"; };
-		9F8B65272CC78F6000F28DA0 /* UserBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBean.swift; sourceTree = "<group>"; };
-		9F8B65292CC7914300F28DA0 /* MeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVM.swift; sourceTree = "<group>"; };
 		9FCE336E2CC6064D00D2D8EC /* tasong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCE33712CC6064D00D2D8EC /* tasongApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tasongApp.swift; sourceTree = "<group>"; };
 		9FCE33732CC6064D00D2D8EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FCE33782CC6064E00D2D8EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9FCE33812CC6086700D2D8EC /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		9FCE33832CC6086700D2D8EC /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = ../../mengchuang/mengchuang/AppState.swift; sourceTree = "<group>"; };
-		9FCE33842CC6086700D2D8EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../mengchuang/mengchuang/Assets.xcassets; sourceTree = "<group>"; };
-		9FCE33852CC6086700D2D8EC /* MyNetWorkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetWorkService.swift; sourceTree = "<group>"; };
-		9FCE33872CC6086700D2D8EC /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = ../../mengchuang/mengchuang/Localizable.xcstrings; sourceTree = "<group>"; };
-		9FCE33882CC6086700D2D8EC /* NavigationDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
-		9FCE338A2CC6086700D2D8EC /* MyNetWorkRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetWorkRepository.swift; sourceTree = "<group>"; };
-		9FCE338C2CC6086700D2D8EC /* MePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MePage.swift; sourceTree = "<group>"; };
-		9FCE338E2CC6086700D2D8EC /* DeviceAllBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceAllBean.swift; sourceTree = "<group>"; };
-		9FCE338F2CC6086700D2D8EC /* DeviceChartBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceChartBean.swift; sourceTree = "<group>"; };
-		9FCE33902CC6086700D2D8EC /* DeviceDataBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataBean.swift; sourceTree = "<group>"; };
-		9FCE33912CC6086700D2D8EC /* DeviceImageBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceImageBean.swift; sourceTree = "<group>"; };
-		9FCE33922CC6086700D2D8EC /* DeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
-		9FCE33942CC6086700D2D8EC /* ContactPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPage.swift; sourceTree = "<group>"; };
-		9FCE33962CC6086700D2D8EC /* DeviceDataPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataPage.swift; sourceTree = "<group>"; };
-		9FCE33972CC6086700D2D8EC /* DeviceDataVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDataVM.swift; sourceTree = "<group>"; };
-		9FCE33982CC6086700D2D8EC /* DeviceDetailPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailPage.swift; sourceTree = "<group>"; };
-		9FCE33992CC6086700D2D8EC /* DeviceDetailVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceDetailVM.swift; sourceTree = "<group>"; };
-		9FCE339A2CC6086700D2D8EC /* DevicePhotoPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePhotoPage.swift; sourceTree = "<group>"; };
-		9FCE339B2CC6086700D2D8EC /* DevicePhotoVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicePhotoVM.swift; sourceTree = "<group>"; };
-		9FCE339D2CC6086700D2D8EC /* DeviceStatVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStatVM.swift; sourceTree = "<group>"; };
-		9FCE339F2CC6086700D2D8EC /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
-		9FCE33A02CC6086700D2D8EC /* HomePageVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageVM.swift; sourceTree = "<group>"; };
-		9FCE33A22CC6086700D2D8EC /* MainPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
-		9FCE33A42CC6086700D2D8EC /* SplashPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashPage.swift; sourceTree = "<group>"; };
-		9FCE33A52CC6086700D2D8EC /* SplashVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
-		9FCE33A82CC6086700D2D8EC /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		9FCE33C82CC60A2E00D2D8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9FCE33CF2CC6172900D2D8EC /* DeviceStatPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatPage.swift; sourceTree = "<group>"; };
+		9FDA157B2CE471170001998A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		9FDA15892CE4736E0001998A /* MyNetWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNetWorkRepository.swift; sourceTree = "<group>"; };
+		9FDA158B2CE473940001998A /* MyNetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNetWorkService.swift; sourceTree = "<group>"; };
+		9FDA158D2CE473C30001998A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		9FDA158F2CE4741C0001998A /* SplashPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPage.swift; sourceTree = "<group>"; };
+		9FDA15912CE474270001998A /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
+		9FDA15932CE474590001998A /* RegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPage.swift; sourceTree = "<group>"; };
+		9FDA15952CE4746C0001998A /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		9FDA15972CE474930001998A /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		9FDA15992CE474AE0001998A /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		9FDA159B2CE474BA0001998A /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		9FDA159D2CE474DC0001998A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		9FDA159F2CE474E70001998A /* HomePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVM.swift; sourceTree = "<group>"; };
+		9FDA15A12CE475180001998A /* DeviceControlPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlPage.swift; sourceTree = "<group>"; };
+		9FDA15A32CE475270001998A /* DeviceControlVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlVM.swift; sourceTree = "<group>"; };
+		9FDA15A52CE475370001998A /* DeviceDataPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDataPage.swift; sourceTree = "<group>"; };
+		9FDA15A72CE475430001998A /* DeviceDataVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDataVM.swift; sourceTree = "<group>"; };
+		9FDA15A92CE475560001998A /* DeviceDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailPage.swift; sourceTree = "<group>"; };
+		9FDA15AB2CE475670001998A /* DeviceDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailVM.swift; sourceTree = "<group>"; };
+		9FDA15AD2CE475840001998A /* DevicePhotoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePhotoPage.swift; sourceTree = "<group>"; };
+		9FDA15AF2CE475E30001998A /* DevicePhotoVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePhotoVM.swift; sourceTree = "<group>"; };
+		9FDA15B12CE475EF0001998A /* DeviceStatPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatPage.swift; sourceTree = "<group>"; };
+		9FDA15B32CE476310001998A /* DeviceStatVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatVM.swift; sourceTree = "<group>"; };
+		9FDA15B52CE4769E0001998A /* ContactPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPage.swift; sourceTree = "<group>"; };
+		9FDA15B72CE476A90001998A /* ContactVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactVM.swift; sourceTree = "<group>"; };
+		9FDA15BB2CE477270001998A /* DeviceAllBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAllBean.swift; sourceTree = "<group>"; };
+		9FDA15BD2CE477340001998A /* DeviceChartBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceChartBean.swift; sourceTree = "<group>"; };
+		9FDA15BF2CE477410001998A /* DeviceControlBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceControlBean.swift; sourceTree = "<group>"; };
+		9FDA15C12CE477790001998A /* DeviceDataBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDataBean.swift; sourceTree = "<group>"; };
+		9FDA15C52CE4778D0001998A /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		9FDA15C72CE477940001998A /* LoginBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBean.swift; sourceTree = "<group>"; };
+		9FDA15C92CE477A90001998A /* ReceiveControlBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveControlBean.swift; sourceTree = "<group>"; };
+		9FDA15CB2CE477B20001998A /* UserBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBean.swift; sourceTree = "<group>"; };
+		9FDA15CD2CE477CB0001998A /* VerCodeBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerCodeBean.swift; sourceTree = "<group>"; };
+		9FDA15CF2CE479610001998A /* DeviceImageBean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceImageBean.swift; sourceTree = "<group>"; };
+		9FDA15D12CE4797F0001998A /* MePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MePage.swift; sourceTree = "<group>"; };
+		9FDA15D32CE479850001998A /* MeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVM.swift; sourceTree = "<group>"; };
+		9FDA15DA2CE47A250001998A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9FDA15DC2CE47A770001998A /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9FDA15DE2CE47A930001998A /* NavigationDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
+		9FDA15E12CE47DD30001998A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		9FDA15E22CE47DD30001998A /* handleNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = handleNetworkError.swift; sourceTree = "<group>"; };
+		9FDA15E32CE47DD30001998A /* NetworkErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkErrorHandler.swift; sourceTree = "<group>"; };
+		9FDA15E42CE47DD30001998A /* VerCodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerCodeError.swift; sourceTree = "<group>"; };
 		ECCD896310558FA82E701495 /* Pods-tasong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasong.debug.xcconfig"; path = "Target Support Files/Pods-tasong/Pods-tasong.debug.xcconfig"; sourceTree = "<group>"; };
 		F51CECA81FF3DE30D49FEC9B /* Pods_tasong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tasong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,30 +136,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9F50E6212CC635ED0032C4FF /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				9F50E6222CC6360C0032C4FF /* LoginPage.swift */,
-				9F50E6262CC63F140032C4FF /* LoginVM.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		9F79EA7D2CC88882008BFD0E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				9F79EA7E2CC8888E008BFD0E /* BaseResponse.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		9F8B65202CC7469200F28DA0 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				9F8B65212CC746A600F28DA0 /* RegisterPage.swift */,
-				9F8B65232CC74BC100F28DA0 /* RegisterVM.swift */,
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		9FCE33652CC6064D00D2D8EC = {
@@ -181,21 +165,21 @@
 		9FCE33702CC6064D00D2D8EC /* tasong */ = {
 			isa = PBXGroup;
 			children = (
+				9FDA15E52CE47DD30001998A /* Config */,
+				9FDA15DF2CE47A930001998A /* Navigation */,
+				9FDA15DC2CE47A770001998A /* Localizable.xcstrings */,
+				9FDA15DA2CE47A250001998A /* Assets.xcassets */,
+				9FDA15842CE4727F0001998A /* Repository */,
+				9FDA157D2CE4715F0001998A /* ViewModel */,
+				9FDA15732CE45BC00001998A /* Service */,
+				9FDA14CF2CE45A430001998A /* Feature */,
 				9F79EA7D2CC88882008BFD0E /* Extension */,
 				9FCE33C82CC60A2E00D2D8EC /* Info.plist */,
-				9FCE33832CC6086700D2D8EC /* AppState.swift */,
-				9FCE33842CC6086700D2D8EC /* Assets.xcassets */,
-				9FCE33822CC6086700D2D8EC /* Config */,
-				9FCE33A72CC6086700D2D8EC /* Feature */,
-				9FCE33872CC6086700D2D8EC /* Localizable.xcstrings */,
-				9FCE33892CC6086700D2D8EC /* Navigation */,
-				9FCE338B2CC6086700D2D8EC /* Repository */,
-				9FCE33862CC6086700D2D8EC /* Service */,
-				9FCE33A92CC6086700D2D8EC /* ViewModel */,
 				9FCE33712CC6064D00D2D8EC /* tasongApp.swift */,
 				9FCE33732CC6064D00D2D8EC /* ContentView.swift */,
 				9FCE33772CC6064E00D2D8EC /* Preview Content */,
 				9F8B651D2CC745B900F28DA0 /* Toast.swift */,
+				9FDA157B2CE471170001998A /* AppState.swift */,
 			);
 			path = tasong;
 			sourceTree = "<group>";
@@ -208,146 +192,159 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9FCE33822CC6086700D2D8EC /* Config */ = {
+		9FDA14CF2CE45A430001998A /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE33812CC6086700D2D8EC /* Config.swift */,
-				9F79EA7B2CC87E57008BFD0E /* VerCodeError.swift */,
-				9F79EA822CC89092008BFD0E /* NetworkErrorHandler.swift */,
+				9FDA156A2CE45B8C0001998A /* Splash */,
+				9FDA15652CE45B7F0001998A /* Register */,
+				9FDA15622CE45B670001998A /* Main */,
+				9FDA155D2CE45B590001998A /* Login */,
+				9FDA15582CE45B4B0001998A /* Home */,
+				9FDA15412CE45AC70001998A /* DeviceDetail */,
+				9FDA153C2CE45AAD0001998A /* Contact */,
+				9FDA15252CE45A9C0001998A /* Bean */,
+				9FDA15202CE45A7D0001998A /* About */,
 			);
-			name = Config;
-			path = ../../mengchuang/mengchuang/Config;
+			path = Feature;
 			sourceTree = "<group>";
 		};
-		9FCE33862CC6086700D2D8EC /* Service */ = {
+		9FDA15202CE45A7D0001998A /* About */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE33852CC6086700D2D8EC /* MyNetWorkService.swift */,
-			);
-			name = Service;
-			path = ../../mengchuang/mengchuang/Service;
-			sourceTree = "<group>";
-		};
-		9FCE33892CC6086700D2D8EC /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				9FCE33882CC6086700D2D8EC /* NavigationDestination.swift */,
-			);
-			name = Navigation;
-			path = ../../mengchuang/mengchuang/Navigation;
-			sourceTree = "<group>";
-		};
-		9FCE338B2CC6086700D2D8EC /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				9FCE338A2CC6086700D2D8EC /* MyNetWorkRepository.swift */,
-			);
-			name = Repository;
-			path = ../../mengchuang/mengchuang/Repository;
-			sourceTree = "<group>";
-		};
-		9FCE338D2CC6086700D2D8EC /* About */ = {
-			isa = PBXGroup;
-			children = (
-				9FCE338C2CC6086700D2D8EC /* MePage.swift */,
-				9F8B65292CC7914300F28DA0 /* MeVM.swift */,
+				9FDA15D12CE4797F0001998A /* MePage.swift */,
+				9FDA15D32CE479850001998A /* MeVM.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
 		};
-		9FCE33932CC6086700D2D8EC /* Bean */ = {
+		9FDA15252CE45A9C0001998A /* Bean */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE338E2CC6086700D2D8EC /* DeviceAllBean.swift */,
-				9FCE338F2CC6086700D2D8EC /* DeviceChartBean.swift */,
-				9FCE33902CC6086700D2D8EC /* DeviceDataBean.swift */,
-				9FCE33912CC6086700D2D8EC /* DeviceImageBean.swift */,
-				9FCE33922CC6086700D2D8EC /* DeviceType.swift */,
-				9F50E6242CC63E5C0032C4FF /* VerCodeBean.swift */,
-				9F50E6282CC657230032C4FF /* LoginBean.swift */,
-				9F8B65272CC78F6000F28DA0 /* UserBean.swift */,
-				9F36D3F52CD8792700414292 /* DeviceControlBean.swift */,
-				9F36D3F72CE1A45400414292 /* ReceiveControlBean.swift */,
+				9FDA15CF2CE479610001998A /* DeviceImageBean.swift */,
+				9FDA15BB2CE477270001998A /* DeviceAllBean.swift */,
+				9FDA15BD2CE477340001998A /* DeviceChartBean.swift */,
+				9FDA15BF2CE477410001998A /* DeviceControlBean.swift */,
+				9FDA15C12CE477790001998A /* DeviceDataBean.swift */,
+				9FDA15C52CE4778D0001998A /* DeviceType.swift */,
+				9FDA15C72CE477940001998A /* LoginBean.swift */,
+				9FDA15C92CE477A90001998A /* ReceiveControlBean.swift */,
+				9FDA15CB2CE477B20001998A /* UserBean.swift */,
+				9FDA15CD2CE477CB0001998A /* VerCodeBean.swift */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
 		};
-		9FCE33952CC6086700D2D8EC /* Contact */ = {
+		9FDA153C2CE45AAD0001998A /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE33942CC6086700D2D8EC /* ContactPage.swift */,
-				9F8B65252CC7812600F28DA0 /* ContactVM.swift */,
+				9FDA15B52CE4769E0001998A /* ContactPage.swift */,
+				9FDA15B72CE476A90001998A /* ContactVM.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
 		};
-		9FCE339E2CC6086700D2D8EC /* DeviceDetail */ = {
+		9FDA15412CE45AC70001998A /* DeviceDetail */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE33962CC6086700D2D8EC /* DeviceDataPage.swift */,
-				9FCE33972CC6086700D2D8EC /* DeviceDataVM.swift */,
-				9FCE33982CC6086700D2D8EC /* DeviceDetailPage.swift */,
-				9FCE33992CC6086700D2D8EC /* DeviceDetailVM.swift */,
-				9FCE339A2CC6086700D2D8EC /* DevicePhotoPage.swift */,
-				9FCE339B2CC6086700D2D8EC /* DevicePhotoVM.swift */,
-				9FCE339D2CC6086700D2D8EC /* DeviceStatVM.swift */,
-				9FCE33CF2CC6172900D2D8EC /* DeviceStatPage.swift */,
-				9F7BABEA2CD462AB0028E6CB /* DeviceControlPage.swift */,
-				9F7BABEC2CD464D60028E6CB /* DeviceControlVM.swift */,
+				9FDA15A12CE475180001998A /* DeviceControlPage.swift */,
+				9FDA15A32CE475270001998A /* DeviceControlVM.swift */,
+				9FDA15A52CE475370001998A /* DeviceDataPage.swift */,
+				9FDA15A72CE475430001998A /* DeviceDataVM.swift */,
+				9FDA15A92CE475560001998A /* DeviceDetailPage.swift */,
+				9FDA15AB2CE475670001998A /* DeviceDetailVM.swift */,
+				9FDA15AD2CE475840001998A /* DevicePhotoPage.swift */,
+				9FDA15AF2CE475E30001998A /* DevicePhotoVM.swift */,
+				9FDA15B12CE475EF0001998A /* DeviceStatPage.swift */,
+				9FDA15B32CE476310001998A /* DeviceStatVM.swift */,
 			);
 			path = DeviceDetail;
 			sourceTree = "<group>";
 		};
-		9FCE33A12CC6086700D2D8EC /* Home */ = {
+		9FDA15582CE45B4B0001998A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE339F2CC6086700D2D8EC /* HomePage.swift */,
-				9FCE33A02CC6086700D2D8EC /* HomePageVM.swift */,
+				9FDA159D2CE474DC0001998A /* HomePage.swift */,
+				9FDA159F2CE474E70001998A /* HomePageVM.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		9FCE33A32CC6086700D2D8EC /* Main */ = {
+		9FDA155D2CE45B590001998A /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE33A22CC6086700D2D8EC /* MainPage.swift */,
+				9FDA15992CE474AE0001998A /* LoginPage.swift */,
+				9FDA159B2CE474BA0001998A /* LoginVM.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9FDA15622CE45B670001998A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA15972CE474930001998A /* MainPage.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		9FCE33A62CC6086700D2D8EC /* Splash */ = {
+		9FDA15652CE45B7F0001998A /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE33A42CC6086700D2D8EC /* SplashPage.swift */,
-				9FCE33A52CC6086700D2D8EC /* SplashVM.swift */,
+				9FDA15932CE474590001998A /* RegisterPage.swift */,
+				9FDA15952CE4746C0001998A /* RegisterVM.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		9FDA156A2CE45B8C0001998A /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA15912CE474270001998A /* SplashVM.swift */,
+				9FDA158F2CE4741C0001998A /* SplashPage.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		9FCE33A72CC6086700D2D8EC /* Feature */ = {
+		9FDA15732CE45BC00001998A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				9F8B65202CC7469200F28DA0 /* Register */,
-				9F50E6212CC635ED0032C4FF /* Login */,
-				9FCE338D2CC6086700D2D8EC /* About */,
-				9FCE33932CC6086700D2D8EC /* Bean */,
-				9FCE33952CC6086700D2D8EC /* Contact */,
-				9FCE339E2CC6086700D2D8EC /* DeviceDetail */,
-				9FCE33A12CC6086700D2D8EC /* Home */,
-				9FCE33A32CC6086700D2D8EC /* Main */,
-				9FCE33A62CC6086700D2D8EC /* Splash */,
+				9FDA158B2CE473940001998A /* MyNetWorkService.swift */,
 			);
-			name = Feature;
-			path = ../../mengchuang/mengchuang/Feature;
+			path = Service;
 			sourceTree = "<group>";
 		};
-		9FCE33A92CC6086700D2D8EC /* ViewModel */ = {
+		9FDA157D2CE4715F0001998A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9FCE33A82CC6086700D2D8EC /* BaseViewModel.swift */,
+				9FDA158D2CE473C30001998A /* BaseViewModel.swift */,
 			);
-			name = ViewModel;
-			path = ../../mengchuang/mengchuang/ViewModel;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9FDA15842CE4727F0001998A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA15892CE4736E0001998A /* MyNetWorkRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		9FDA15DF2CE47A930001998A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA15DE2CE47A930001998A /* NavigationDestination.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		9FDA15E52CE47DD30001998A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9FDA15E12CE47DD30001998A /* Config.swift */,
+				9FDA15E22CE47DD30001998A /* handleNetworkError.swift */,
+				9FDA15E32CE47DD30001998A /* NetworkErrorHandler.swift */,
+				9FDA15E42CE47DD30001998A /* VerCodeError.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		D15BF5DC83B89CB6C738B1C5 /* Pods */ = {
@@ -371,6 +368,7 @@
 				9FCE336B2CC6064D00D2D8EC /* Frameworks */,
 				9FCE336C2CC6064D00D2D8EC /* Resources */,
 				B28E115703DDB072F5572CE3 /* [CP] Embed Pods Frameworks */,
+				9FDA14A32CE455500001998A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -420,8 +418,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FCE33792CC6064E00D2D8EC /* Preview Assets.xcassets in Resources */,
-				9FCE33AC2CC6086700D2D8EC /* Assets.xcassets in Resources */,
-				9FCE33AE2CC6086700D2D8EC /* Localizable.xcstrings in Resources */,
+				9FDA15DB2CE47A250001998A /* Assets.xcassets in Resources */,
+				9FDA15DD2CE47A770001998A /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +448,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9FDA14A32CE455500001998A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 		B28E115703DDB072F5572CE3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,51 +489,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FCE33B32CC6086700D2D8EC /* DeviceChartBean.swift in Sources */,
-				9F8B65262CC7812600F28DA0 /* ContactVM.swift in Sources */,
-				9F8B65222CC746A600F28DA0 /* RegisterPage.swift in Sources */,
-				9FCE33C02CC6086700D2D8EC /* HomePage.swift in Sources */,
-				9FCE33B42CC6086700D2D8EC /* DeviceDataBean.swift in Sources */,
-				9F7BABED2CD464D60028E6CB /* DeviceControlVM.swift in Sources */,
-				9F50E6232CC6360C0032C4FF /* LoginPage.swift in Sources */,
-				9FCE33B62CC6086700D2D8EC /* DeviceType.swift in Sources */,
-				9F79EA832CC89092008BFD0E /* NetworkErrorHandler.swift in Sources */,
-				9FCE33D02CC6172900D2D8EC /* DeviceStatPage.swift in Sources */,
-				9FCE33B22CC6086700D2D8EC /* DeviceAllBean.swift in Sources */,
+				9FDA15E82CE47DD30001998A /* NetworkErrorHandler.swift in Sources */,
+				9FDA159E2CE474DC0001998A /* HomePage.swift in Sources */,
+				9FDA15B22CE475EF0001998A /* DeviceStatPage.swift in Sources */,
+				9FDA15D22CE4797F0001998A /* MePage.swift in Sources */,
+				9FDA15BE2CE477340001998A /* DeviceChartBean.swift in Sources */,
+				9FDA15B62CE4769E0001998A /* ContactPage.swift in Sources */,
+				9FDA15C82CE477940001998A /* LoginBean.swift in Sources */,
+				9FDA15C22CE477790001998A /* DeviceDataBean.swift in Sources */,
+				9FDA15B42CE476310001998A /* DeviceStatVM.swift in Sources */,
 				9FCE33742CC6064D00D2D8EC /* ContentView.swift in Sources */,
-				9FCE33AD2CC6086700D2D8EC /* MyNetWorkService.swift in Sources */,
-				9F36D3F62CD8792700414292 /* DeviceControlBean.swift in Sources */,
-				9FCE33C42CC6086700D2D8EC /* SplashVM.swift in Sources */,
+				9FDA158A2CE4736E0001998A /* MyNetWorkRepository.swift in Sources */,
+				9FDA15A02CE474E70001998A /* HomePageVM.swift in Sources */,
+				9FDA15E62CE47DD30001998A /* Config.swift in Sources */,
+				9FDA15922CE474270001998A /* SplashVM.swift in Sources */,
+				9FDA158C2CE473940001998A /* MyNetWorkService.swift in Sources */,
+				9FDA15CA2CE477A90001998A /* ReceiveControlBean.swift in Sources */,
+				9FDA15BC2CE477270001998A /* DeviceAllBean.swift in Sources */,
+				9FDA15A82CE475430001998A /* DeviceDataVM.swift in Sources */,
+				9FDA15942CE474590001998A /* RegisterPage.swift in Sources */,
 				9FCE33722CC6064D00D2D8EC /* tasongApp.swift in Sources */,
-				9F8B65282CC78F6000F28DA0 /* UserBean.swift in Sources */,
-				9FCE33B02CC6086700D2D8EC /* MyNetWorkRepository.swift in Sources */,
-				9F7BABEB2CD462AB0028E6CB /* DeviceControlPage.swift in Sources */,
+				9FDA15962CE4746C0001998A /* RegisterVM.swift in Sources */,
+				9FDA15CC2CE477B20001998A /* UserBean.swift in Sources */,
+				9FDA15E02CE47A930001998A /* NavigationDestination.swift in Sources */,
+				9FDA15E92CE47DD30001998A /* VerCodeError.swift in Sources */,
+				9FDA15C62CE4778D0001998A /* DeviceType.swift in Sources */,
 				9F79EA7F2CC8888E008BFD0E /* BaseResponse.swift in Sources */,
-				9FCE33AA2CC6086700D2D8EC /* Config.swift in Sources */,
-				9FCE33BC2CC6086700D2D8EC /* DevicePhotoPage.swift in Sources */,
-				9FCE33B72CC6086700D2D8EC /* ContactPage.swift in Sources */,
-				9FCE33C32CC6086700D2D8EC /* SplashPage.swift in Sources */,
-				9F50E6252CC63E5C0032C4FF /* VerCodeBean.swift in Sources */,
-				9FCE33BD2CC6086700D2D8EC /* DevicePhotoVM.swift in Sources */,
-				9F50E6272CC63F140032C4FF /* LoginVM.swift in Sources */,
+				9FDA15A22CE475180001998A /* DeviceControlPage.swift in Sources */,
+				9FDA15C02CE477410001998A /* DeviceControlBean.swift in Sources */,
+				9FDA157C2CE471170001998A /* AppState.swift in Sources */,
+				9FDA159C2CE474BA0001998A /* LoginVM.swift in Sources */,
+				9FDA15AA2CE475560001998A /* DeviceDetailPage.swift in Sources */,
 				9F8B651E2CC745B900F28DA0 /* Toast.swift in Sources */,
-				9FCE33B92CC6086700D2D8EC /* DeviceDataVM.swift in Sources */,
-				9FCE33C52CC6086700D2D8EC /* BaseViewModel.swift in Sources */,
-				9FCE33AF2CC6086700D2D8EC /* NavigationDestination.swift in Sources */,
-				9FCE33B52CC6086700D2D8EC /* DeviceImageBean.swift in Sources */,
-				9FCE33B12CC6086700D2D8EC /* MePage.swift in Sources */,
-				9F8B652A2CC7914300F28DA0 /* MeVM.swift in Sources */,
-				9FCE33BA2CC6086700D2D8EC /* DeviceDetailPage.swift in Sources */,
-				9F50E6292CC657230032C4FF /* LoginBean.swift in Sources */,
-				9F36D3F82CE1A45400414292 /* ReceiveControlBean.swift in Sources */,
-				9F79EA7C2CC87E57008BFD0E /* VerCodeError.swift in Sources */,
-				9F8B65242CC74BC100F28DA0 /* RegisterVM.swift in Sources */,
-				9FCE33BF2CC6086700D2D8EC /* DeviceStatVM.swift in Sources */,
-				9FCE33C22CC6086700D2D8EC /* MainPage.swift in Sources */,
-				9FCE33C12CC6086700D2D8EC /* HomePageVM.swift in Sources */,
-				9FCE33BB2CC6086700D2D8EC /* DeviceDetailVM.swift in Sources */,
-				9FCE33AB2CC6086700D2D8EC /* AppState.swift in Sources */,
-				9FCE33B82CC6086700D2D8EC /* DeviceDataPage.swift in Sources */,
+				9FDA15A42CE475270001998A /* DeviceControlVM.swift in Sources */,
+				9FDA15A62CE475370001998A /* DeviceDataPage.swift in Sources */,
+				9FDA15B82CE476A90001998A /* ContactVM.swift in Sources */,
+				9FDA15D02CE479610001998A /* DeviceImageBean.swift in Sources */,
+				9FDA159A2CE474AE0001998A /* LoginPage.swift in Sources */,
+				9FDA15E72CE47DD30001998A /* handleNetworkError.swift in Sources */,
+				9FDA158E2CE473C30001998A /* BaseViewModel.swift in Sources */,
+				9FDA15902CE4741C0001998A /* SplashPage.swift in Sources */,
+				9FDA15AC2CE475670001998A /* DeviceDetailVM.swift in Sources */,
+				9FDA15D42CE479850001998A /* MeVM.swift in Sources */,
+				9FDA15B02CE475E30001998A /* DevicePhotoVM.swift in Sources */,
+				9FDA15CE2CE477CB0001998A /* VerCodeBean.swift in Sources */,
+				9FDA15982CE474930001998A /* MainPage.swift in Sources */,
+				9FDA15AE2CE475840001998A /* DevicePhotoPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +669,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"tasong/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B4TXPLNW7;
+				DEVELOPMENT_TEAM = WWLH763R5P;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -687,7 +703,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"tasong/Preview Content\"";
-				DEVELOPMENT_TEAM = 3B4TXPLNW7;
+				DEVELOPMENT_TEAM = WWLH763R5P;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
