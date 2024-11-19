@@ -84,8 +84,8 @@ class MyNetWorkRepository {
         request(.deviceInfo(deviceId: deviceId, pageNum: pageNum, pageSize: pageSize), type: DeviceAllBean.self, completion: completion)
     }
     
-    func getDeviceData(deviceId: String, completion: @escaping (Result<DeviceDataBean, Error>) -> Void) {
-        request(.deviceData(deviceId: deviceId), type: DeviceDataBean.self, completion: completion)
+    func getDeviceData(deviceId: String, pageNum: Int, pageSize: Int, completion: @escaping (Result<DeviceDataBean, Error>) -> Void) {
+        request(.deviceData(deviceId: deviceId, pageNum: pageNum, pageSize: pageSize), type: DeviceDataBean.self, completion: completion)
     }
     
     func getDevicePhoto(deviceId: String, completion: @escaping (Result<DeviceImageBean, Error>) -> Void) {

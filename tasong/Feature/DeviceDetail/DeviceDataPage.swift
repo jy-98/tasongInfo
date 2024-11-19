@@ -6,89 +6,125 @@
 //
 
 import SwiftUI
-struct DeviceDataPage:View{
-    
-    @StateObject var viewModel:DeviceDataVM
+struct DeviceDataPage: View {
+    @StateObject var viewModel: DeviceDataVM
     @Environment(\.presentationMode) var presentationMode // 环境变量，用于控制页面返回
     
     init(deviceId: String) {
-        _viewModel = StateObject(wrappedValue: DeviceDataVM(deviceId: deviceId)) // 初始化 @StateObject
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground() // 移除默认背景
-        appearance.backgroundImage = UIImage(named: "toolbar") // 设置背景图
-        // 修改标题文字的颜色和字体
-        appearance.titleTextAttributes = [
-            .foregroundColor: UIColor.white, // 标题文字颜色
-            .font: UIFont.boldSystemFont(ofSize: 18) // 标题文字字体
-        ]
-        UINavigationBar.appearance().tintColor = .white
-        
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        _viewModel = StateObject(wrappedValue: DeviceDataVM(deviceId: deviceId, completion: { success in
+            if success {
+                print("数据加载成功")
+            } else {
+                print("数据加载失败")
+            }
+        })) // 初始化 @StateObject
     }
-    
+
     var body: some View {
-        DeviceDataPageContent(deviceDataAll: viewModel.deviceDatas)
-            .navigationTitle("设备数据")  // 设置页面标题
-            .navigationBarTitleDisplayMode(.inline) // 控制标题显示模式 (large/inline)
-            .navigationBarBackButtonHidden(true) // 隐藏默认返回按钮
-        
+        DeviceDataPageContent(viewModel: viewModel, deviceDataAll: viewModel.deviceDatas)
+            .navigationTitle("设备数据")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
-                // 自定义导航栏左侧按钮（替换默认返回按钮）
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
-                        presentationMode.wrappedValue.dismiss() // 返回上一页
-                        // 自定义返回操作，例如 pop
+                        presentationMode.wrappedValue.dismiss()
                     }) {
                         HStack {
-                            Image(systemName: "chevron.left") // 自定义返回图标
+                            Image(systemName: "chevron.left")
                         }
-                        .foregroundColor(.white) // 设置颜色
+                        .foregroundColor(.white)
                     }
                 }
             }
     }
 }
 
-struct DeviceDataPageContent:View {
-    var deviceDataAll:[Imei]?
+
+struct DeviceDataPageContent: View {
+    @ObservedObject var viewModel: DeviceDataVM
+    @State private var isRefreshing = false
+    @State private var isLoadingMore = false
+    var deviceDataAll: [Imei]?
+
     var body: some View {
-        if let dataData = deviceDataAll, !dataData.isEmpty{
-            ScrollView(.vertical,showsIndicators: false){
-                LazyVStack(spacing: 0){
-                    ForEach(dataData){ imei in
+        if let dataData = deviceDataAll, !dataData.isEmpty {
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVStack(spacing: 0) {
+                    ForEach(dataData) { imei in
                         ItemDeviceData(device: imei)
-                            .padding(.vertical,6)
+                            .padding(.vertical, 6)
                     }
                 }
+                .padding(.top, 16)
+                .padding(.horizontal, 25)
+                .background(
+                    Image("center bg")
+                        .resizable()
+                        .scaledToFill()
+                        .ignoresSafeArea(.all)
+                )
+                .overlay(GeometryReader { geometry in
+                    Color.clear
+                        .onChange(of: geometry.frame(in: .global).maxY) { value in
+                            // 判断是否已经到达底部
+                            if value <= UIScreen.main.bounds.height {
+                                loadNextPage()  // 当内容完全显示时，加载更多数据
+                            }
+                        }
+                })
             }
-            .padding(.top,16)
-            .padding(.horizontal,25)
-            .background(
-                Image("center bg")
-                    .resizable()
-                    .scaledToFill() // 确保填满
-                    .ignoresSafeArea(.all) // 确保整个内容忽略安全区域
-            )
-        }else{
-            ZStack{
+            .refreshable {
+                isRefreshing = true
+                loadData(pageNum: 1)  // 重置为第一页并重新加载
+            }
+        } else {
+            ZStack {
                 Image("nulldata")
-            } .background(
+            }
+            .background(
                 Image("center bg")
                     .resizable()
                     .frame(
                         width: UIScreen.main.bounds.width,
                         height: UIScreen.main.bounds.height
                     )
-                    .scaledToFill() // 确保填满
-                    .ignoresSafeArea(.all) // 确保整个内容忽略安全区域
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
             )
-            
         }
+    }
+
+    // 加载第一页数据
+    func loadData(pageNum: Int) {
+        viewModel.loadData(pageNum: pageNum, pageSize: 10) { success in
+            isRefreshing = false  // 刷新结束
+            if success {
+                print("加载成功")
+            } else {
+                print("加载失败")
+            }
+        }
+    }
+
+    // 加载更多数据
+    func loadNextPage() {
+        guard !isLoadingMore else { return }
+        isLoadingMore = true
         
+        let nextPage = viewModel.currentPage + 1
+        viewModel.loadData(pageNum: nextPage, pageSize: 10) { success in
+            isLoadingMore = false
+            if success {
+                print("加载更多成功")
+            } else {
+                print("加载更多失败")
+            }
+        }
     }
 }
+
+
 
 struct ItemDeviceData:View {
     var device: Imei // 接收单个设备元素

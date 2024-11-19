@@ -88,7 +88,7 @@ struct MePageContent:View {
             .background(Color.white) // 确保背景为白色，与边框颜色形成对比
             
             HStack() {
-                Image("person")
+                Image("shouji")
                     .resizable() // 确保图像可调整大小
                     .scaledToFit() // 适应其容器
                     .frame(width: 20, height: 20) // 设置图标大小
@@ -109,7 +109,7 @@ struct MePageContent:View {
             .padding(.top,40)
             
             HStack() {
-                Image("person")
+                Image("bumen")
                     .resizable() // 确保图像可调整大小
                     .scaledToFit() // 适应其容器
                     .frame(width: 20, height: 20) // 设置图标大小
@@ -153,7 +153,7 @@ struct MePageContent:View {
             
             
             HStack() {
-                Image("person")
+                Image("riqi")
                     .resizable() // 确保图像可调整大小
                     .scaledToFit() // 适应其容器
                     .frame(width: 20, height: 20) // 设置图标大小

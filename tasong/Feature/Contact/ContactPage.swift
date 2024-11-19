@@ -86,7 +86,7 @@ struct ContactPageContent:View {
             
             
             HStack() {
-                Image("person")
+                Image("gongsidizhi")
                     .resizable() // 确保图像可调整大小
                     .scaledToFit() // 适应其容器
                     .frame(width: 20, height: 20) // 设置图标大小
@@ -107,7 +107,7 @@ struct ContactPageContent:View {
                 .padding(.top,3)
             
             HStack() {
-                Image("person")
+                Image("youxiang")
                     .resizable() // 确保图像可调整大小
                     .scaledToFit() // 适应其容器
                     .frame(width: 20, height: 20) // 设置图标大小
@@ -129,7 +129,7 @@ struct ContactPageContent:View {
             
             
             HStack() {
-                Image("person")
+                Image("wangzhi")
                     .resizable() // 确保图像可调整大小
                     .scaledToFit() // 适应其容器
                     .frame(width: 20, height: 20) // 设置图标大小
@@ -151,7 +151,7 @@ struct ContactPageContent:View {
             
             
             HStack() {
-                Image("person")
+                Image("dianhua")
                     .resizable() // 确保图像可调整大小
                     .scaledToFit() // 适应其容器
                     .frame(width: 20, height: 20) // 设置图标大小

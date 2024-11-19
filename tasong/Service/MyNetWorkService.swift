@@ -15,7 +15,7 @@ enum MyNetWorkService{
     case verCode
     case contact
     case deviceInfo(deviceId:String,pageNum:Int,pageSize:Int)
-    case deviceData(deviceId:String)
+    case deviceData(deviceId:String,pageNum:Int,pageSize:Int)
     case devicePhoto(deviceId:String)
     case deviceChart(deviceId:String)
     case deviceControl(deviceId:String,typeCode: String)
@@ -102,9 +102,11 @@ extension MyNetWorkService:TargetType{
                 "pageNum": pageNum,
                 "pageSize": pageSize
             ], encoding: URLEncoding.queryString)
-        case .deviceData(deviceId: let deviceId):
+        case let .deviceData(deviceId,pageNum,pageSize):
             return .requestParameters(parameters: [
                 "deviceId": deviceId,
+                "pageNum": pageNum,
+                "pageSize": pageSize
             ], encoding: URLEncoding.queryString)
         case .devicePhoto(deviceId: let deviceId):
             return .requestParameters(parameters: [
