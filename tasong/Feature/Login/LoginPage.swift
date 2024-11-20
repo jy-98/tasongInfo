@@ -183,16 +183,23 @@ struct LoginPage: View {
             // 同意协议复选框
             HStack(alignment: .bottom) {
                 Toggle(isOn: $isAgreedToTerms) {
-                    Text("我已阅读并同意《用户条款》《隐私政策》，同时授权 xxxx 使用本账户")
-                        .font(.footnote) // 设置字体大小
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.leading) // 文本左对齐
+                    HStack(spacing: 2) { // 减少间距
+                        Text("我已阅读并同意")
+                            .font(.caption2) // 调整字体大小
+                            .foregroundColor(.black)
+                        Link("《用户协议》", destination: URL(string: "http://39.107.78.202:8090/user.html")!)                            .font(.footnote) // 调整字体大小
+
+                            .foregroundColor(.blue)
+                        Link("《隐私政策》", destination: URL(string: "http://39.107.78.202:8090/private.html")!)                            .font(.footnote) // 调整字体大小
+
+                            .foregroundColor(.blue)
+                    }
                 }
-                .toggleStyle(CheckboxToggleStyle()) // 使用复选框样式
-                .frame(maxHeight: .infinity,alignment: .bottom)
+                .toggleStyle(CheckboxToggleStyle())
+                .frame(maxHeight: .infinity, alignment: .bottom)
             }
-            .padding(.horizontal, 16) // 添加横向内边距
-            .padding(.bottom, 30) // 添加底部间距
+            .padding(.bottom, 30)
+
             
         }.padding(.horizontal,17)
         .background {

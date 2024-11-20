@@ -42,8 +42,8 @@ class LoginVM: BaseViewModel {
       }
     
     func login(username: String, password: String, vercode: String, myuuid: String, completion: @escaping (Bool, String?) -> Void) {
-//        repository.login(username: username, password: password, vercode: vercode, myuuid: myuuid) { [weak self] result in
-        repository.login(username: "admin", password: "admin123", vercode: vercode, myuuid: myuuid) { [weak self] result in
+        repository.login(username: username, password: password, vercode: vercode, myuuid: myuuid) { [weak self] result in
+//        repository.login(username: "admin", password: "admin123", vercode: vercode, myuuid: myuuid) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let deviceType):
