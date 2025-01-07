@@ -16,7 +16,7 @@ struct ContactPage: View {
         
         VStack(spacing: 0, content: {
             ToMeContent()
-            ContactPageContent(viewModel: viewModel)
+            ContactPageContent(deptBean: viewModel.deptBean)
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top) // 使内容在 VStack 内上对齐
         
@@ -52,7 +52,8 @@ struct ToContactContent:View {
     }
 }
 struct ContactPageContent:View {
-    @StateObject var viewModel:ContactVM
+    
+    var deptBean: DeptBean
     
     var body: some View {
         VStack(spacing: 0){
@@ -76,7 +77,7 @@ struct ContactPageContent:View {
                 Text("公司名称:")
                     .foregroundColor(.black)
                     .font(.system(size: 15))
-                Text("北京盟创伟业科技有限公司")
+                Text(deptBean.data?.deptName ?? "")
                     .font(.system(size: 15))
                     .foregroundColor(.black)
             }
@@ -98,7 +99,7 @@ struct ContactPageContent:View {
                 Text("公司地址:")
                     .foregroundColor(.black)
                     .font(.system(size: 15))
-                Text("北京市怀柔区融城北路10号院22号楼305室")
+                Text(deptBean.data?.deptAddress ?? "")
                     .font(.system(size: 15))
                     .foregroundColor(.black)
             }
@@ -119,7 +120,7 @@ struct ContactPageContent:View {
                 Text("公司邮箱:")
                     .font(.system(size: 15))
                     .foregroundColor(.black)
-                Text("bj6213@126.com")
+                Text(deptBean.data?.email ?? "")
                     .font(.system(size: 15))
                     .foregroundColor(.black)
             }
@@ -135,13 +136,13 @@ struct ContactPageContent:View {
                     .frame(width: 20, height: 20) // 设置图标大小
                     .foregroundColor(.blue) // 图标颜色
                     .padding(.trailing, 14) // 图标与边框之间的内边距
-                    .padding(.vertical,5)
+                    .padding(.vertical,15)
                     .padding(.leading,30)
 
                 Text("公司网址:")
                     .font(.system(size: 15))
                     .foregroundColor(.black)
-                Text("www.sul2100.cn")
+                Text(deptBean.data?.website ?? "")
                     .font(.system(size: 15))
                     .foregroundColor(.black)
             }
@@ -163,7 +164,7 @@ struct ContactPageContent:View {
                 Text("公司电话:")
                     .font(.system(size: 15))
                     .foregroundColor(.black)
-                Text("13910526419")
+                Text(deptBean.data?.phone ?? "")
                     .font(.system(size: 15))
                     .foregroundColor(.black)
             }

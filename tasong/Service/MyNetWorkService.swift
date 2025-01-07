@@ -19,6 +19,9 @@ enum MyNetWorkService{
     case devicePhoto(deviceId:String)
     case deviceChart(deviceId:String)
     case deviceControl(deviceId:String,typeCode: String)
+    case getUserDept(deptId:String)
+    case sporeControlInfo(deviceId:String)
+    case getSendSpore(name:String,deviceId:String,value:Int)
 }
 
 extension MyNetWorkService:TargetType{
@@ -29,41 +32,48 @@ extension MyNetWorkService:TargetType{
     var path: String {
         switch self {
         case .register:
-            return "\(Config.relase)/system/user"
+            return "/\(Config.relase)/system/user"
 //            return "dev-api/system/user"
         case .login:
-            return "\(Config.relase)/login"
+            return "/\(Config.relase)/login"
 //            return "dev-api/login"
         case .deviceType:
-            return "\(Config.relase)/system/device/list"
+            return "/\(Config.relase)/system/device/list"
 //            return "dev-api/system/device/list"
         case .deviceInfo:
-            return "\(Config.relase)/system/specific/getSpecificByDevice"
+            return "/\(Config.relase)/system/specific/getSpecificByDevice"
 //            return "dev-api/system/specific/getSpecificByDevice"
         case .deviceData:
-            return "\(Config.relase)/system/mqtt/device/data"
+            return "/\(Config.relase)/system/mqtt/device/data"
 //            return "dev-api/system/mqtt/device/data"
         case .devicePhoto:
-            return "\(Config.relase)/system/mqtt/device/image/info"
+            return "/\(Config.relase)/system/mqtt/device/image/info"
 //            return "dev-api/system/mqtt/device/image/info"
         case .deviceChart:
-            return "\(Config.relase)/system/mqtt/device/statistics"
+            return "/\(Config.relase)/system/mqtt/device/statistics"
 //            return "dev-api/system/mqtt/device/statistics"
         case .verCode:
-            return "\(Config.relase)/captchaImage"
+            return "/\(Config.relase)/captchaImage"
 //            return "dev-api/captchaImage"
         case .contact:
-            return "\(Config.relase)/system/user/profile"
+            return "/\(Config.relase)/system/user/profile"
 //            return "dev-api/system/user/profile"
         case .deviceControl:
-            return "\(Config.relase)/system/mqtt/device/testLight/status"
+            return "/\(Config.relase)/system/mqtt/device/testLight/status"
 //            return "dev-api/system/mqtt/device/testLight/status"
+        case .getUserDept(deptId: let deptId):
+            return "/\(Config.relase)/system/dept/\(deptId)"
+        case .sporeControlInfo:
+            return "/\(Config.relase)/system/mqtt/device/spore/control/info"
+        case .getSendSpore:
+            return "/\(Config.relase)/system/mqtt/device/spore/control"
         }
+        
     }
     
     var method: Moya.Method {
         switch self {
-        case .deviceType, .deviceInfo, .deviceData, .devicePhoto, .deviceChart, .verCode , .contact,.deviceControl:
+        case .deviceType, .deviceInfo, .deviceData, .devicePhoto, .deviceChart, .verCode , .contact,.deviceControl,.getUserDept,.sporeControlInfo,.getSendSpore:
             return .get
         case .register, .login:
             return .post
@@ -121,8 +131,19 @@ extension MyNetWorkService:TargetType{
                 "deviceId": deviceId,
                 "typeCode": typeCode,
             ], encoding: URLEncoding.queryString)
+        case .sporeControlInfo(deviceId: let deviceId):
+            return .requestParameters(parameters: [
+                "deviceId": deviceId,
+            ], encoding: URLEncoding.queryString)
+        case .getSendSpore(name: let name, deviceId: let deviceId, value: let value):
+            return .requestParameters(parameters: [
+                "name": name,
+                "deviceId": deviceId,
+                "value": value,
+            ], encoding: URLEncoding.queryString)
+        case .getUserDept(deptId: let deptId):
+            return .requestPlain
         }
-        
     }
     
     var headers: [String : String]? {

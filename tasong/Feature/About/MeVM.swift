@@ -27,6 +27,7 @@ class MeVM: BaseViewModel {
                 case .success(let deviceType):
                     print("请求成功：\(String(describing: deviceType))")
                     UserDefaults.standard.set(deviceType.data?.userId, forKey: "authUser")
+                    UserDefaults.standard.set(deviceType.data?.deptId, forKey: "deptId")
                     self?.userbean = deviceType
 
                 case .failure(let error):

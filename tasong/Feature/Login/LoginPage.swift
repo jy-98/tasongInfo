@@ -63,7 +63,9 @@ struct LoginPage: View {
                 Text("欢迎进入!")
                     .font(.system(size: 15))
                     .foregroundStyle(.accent)
-                    .padding(.top,34)
+                    .padding(.top,34)          
+                    .padding(.horizontal,25)
+
                 
                 ZStack(alignment: .leading) {
                   
@@ -86,7 +88,10 @@ struct LoginPage: View {
                         .foregroundColor(.blue) // 图标颜色
                         .padding(.leading, 10) // 图标与边框之间的内边距
                     
-                }                    .padding(.top,20)
+                }
+                .padding(.top,20)
+                .padding(.horizontal,25)
+
 
                 
                 
@@ -113,10 +118,14 @@ struct LoginPage: View {
                     
                 }
                 .padding(.top,20)
+                .padding(.horizontal,25)
+
 
                 
                 verCodeContent(verCodeBean: viewmodel.verCodeBean,vercode: $vercode)
-                    .padding(.top,20)
+                    .padding(.top,20)         
+                    .padding(.horizontal,25)
+
 
                 
                 
@@ -159,8 +168,9 @@ struct LoginPage: View {
             .background {
                 Image("center login")
                     .resizable()
-                    .frame(height: 430)
-                    .frame(width: 320)
+                    .scaledToFill() // 确保图片充满视图并裁剪多余部分
+                            .frame(maxWidth: .infinity, maxHeight: .infinity) // 占满整个空间
+                            .ignoresSafeArea() // 忽略安全区域（比如顶部状态栏）
             }
             .padding(.horizontal,16)
             .padding(.top,35)
@@ -198,7 +208,7 @@ struct LoginPage: View {
                 .toggleStyle(CheckboxToggleStyle())
                 .frame(maxHeight: .infinity, alignment: .bottom)
             }
-            .padding(.bottom, 30)
+            .padding(.bottom, 60)
 
             
         }.padding(.horizontal,17)
@@ -286,7 +296,6 @@ struct CheckboxToggleStyle: ToggleStyle {
                     configuration.isOn.toggle()
                 }
                 .foregroundColor(configuration.isOn ? .blue : .gray)
-            Spacer()
             configuration.label
 
         }

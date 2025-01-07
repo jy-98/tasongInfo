@@ -12,6 +12,9 @@
 		9FCE33722CC6064D00D2D8EC /* tasongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33712CC6064D00D2D8EC /* tasongApp.swift */; };
 		9FCE33742CC6064D00D2D8EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33732CC6064D00D2D8EC /* ContentView.swift */; };
 		9FCE33792CC6064E00D2D8EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FCE33782CC6064E00D2D8EC /* Preview Assets.xcassets */; };
+		9FD170502D2CBF9F0074FBCF /* DeptBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1704F2D2CBF9F0074FBCF /* DeptBean.swift */; };
+		9FD170522D2D03370074FBCF /* SporeControlBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD170512D2D03370074FBCF /* SporeControlBean.swift */; };
+		9FD170552D2D07410074FBCF /* NumericInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD170542D2D07410074FBCF /* NumericInputField.swift */; };
 		9FDA157C2CE471170001998A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA157B2CE471170001998A /* AppState.swift */; };
 		9FDA158A2CE4736E0001998A /* MyNetWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA15892CE4736E0001998A /* MyNetWorkRepository.swift */; };
 		9FDA158C2CE473940001998A /* MyNetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDA158B2CE473940001998A /* MyNetWorkService.swift */; };
@@ -68,6 +71,9 @@
 		9FCE33732CC6064D00D2D8EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FCE33782CC6064E00D2D8EC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9FCE33C82CC60A2E00D2D8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9FD1704F2D2CBF9F0074FBCF /* DeptBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeptBean.swift; sourceTree = "<group>"; };
+		9FD170512D2D03370074FBCF /* SporeControlBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SporeControlBean.swift; sourceTree = "<group>"; };
+		9FD170542D2D07410074FBCF /* NumericInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericInputField.swift; sourceTree = "<group>"; };
 		9FDA157B2CE471170001998A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9FDA15892CE4736E0001998A /* MyNetWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNetWorkRepository.swift; sourceTree = "<group>"; };
 		9FDA158B2CE473940001998A /* MyNetWorkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNetWorkService.swift; sourceTree = "<group>"; };
@@ -192,9 +198,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9FD170532D2D072F0074FBCF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9FD170542D2D07410074FBCF /* NumericInputField.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		9FDA14CF2CE45A430001998A /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				9FD170532D2D072F0074FBCF /* Utils */,
 				9FDA156A2CE45B8C0001998A /* Splash */,
 				9FDA15652CE45B7F0001998A /* Register */,
 				9FDA15622CE45B670001998A /* Main */,
@@ -220,6 +235,7 @@
 		9FDA15252CE45A9C0001998A /* Bean */ = {
 			isa = PBXGroup;
 			children = (
+				9FD170512D2D03370074FBCF /* SporeControlBean.swift */,
 				9FDA15CF2CE479610001998A /* DeviceImageBean.swift */,
 				9FDA15BB2CE477270001998A /* DeviceAllBean.swift */,
 				9FDA15BD2CE477340001998A /* DeviceChartBean.swift */,
@@ -230,6 +246,7 @@
 				9FDA15C92CE477A90001998A /* ReceiveControlBean.swift */,
 				9FDA15CB2CE477B20001998A /* UserBean.swift */,
 				9FDA15CD2CE477CB0001998A /* VerCodeBean.swift */,
+				9FD1704F2D2CBF9F0074FBCF /* DeptBean.swift */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -503,7 +520,9 @@
 				9FDA15A02CE474E70001998A /* HomePageVM.swift in Sources */,
 				9FDA15E62CE47DD30001998A /* Config.swift in Sources */,
 				9FDA15922CE474270001998A /* SplashVM.swift in Sources */,
+				9FD170552D2D07410074FBCF /* NumericInputField.swift in Sources */,
 				9FDA158C2CE473940001998A /* MyNetWorkService.swift in Sources */,
+				9FD170502D2CBF9F0074FBCF /* DeptBean.swift in Sources */,
 				9FDA15CA2CE477A90001998A /* ReceiveControlBean.swift in Sources */,
 				9FDA15BC2CE477270001998A /* DeviceAllBean.swift in Sources */,
 				9FDA15A82CE475430001998A /* DeviceDataVM.swift in Sources */,
@@ -521,6 +540,7 @@
 				9FDA159C2CE474BA0001998A /* LoginVM.swift in Sources */,
 				9FDA15AA2CE475560001998A /* DeviceDetailPage.swift in Sources */,
 				9F8B651E2CC745B900F28DA0 /* Toast.swift in Sources */,
+				9FD170522D2D03370074FBCF /* SporeControlBean.swift in Sources */,
 				9FDA15A42CE475270001998A /* DeviceControlVM.swift in Sources */,
 				9FDA15A62CE475370001998A /* DeviceDataPage.swift in Sources */,
 				9FDA15B82CE476A90001998A /* ContactVM.swift in Sources */,

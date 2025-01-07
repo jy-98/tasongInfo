@@ -11,7 +11,7 @@ struct DeviceControlPage: View {
     @Environment(\.presentationMode) var presentationMode // 环境变量，用于控制页面返回
     
     @State private var messageToSend: String = ""  // 用户输入的消息
-
+    
     init(deviceId: String,typeCode : String) {
         _viewModel = StateObject(wrappedValue: DeviceControlVM(deviceId: deviceId,typeCode: typeCode))
         
@@ -31,28 +31,28 @@ struct DeviceControlPage: View {
     var body: some View {
         VStack {
             DeviceControlPageContent(viewModel: viewModel)
-//
-//            // 显示接收到的消息
-//            Text("收到的消息：\(viewModel.controlData)")
-//                .padding()
-//
-//            // 输入框和发送按钮
-//            HStack {
-//                TextField("输入消息", text: $messageToSend)
-//                    .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    .padding()
-//
-//                Button(action: {
-//                    viewModel.sendMessage(messageToSend) // 发送消息
-//                    messageToSend = "" // 清空输入框
-//                }) {
-//                    Text("发送")
-//                        .foregroundColor(.white)
-//                        .padding()
-//                        .background(Color.blue)
-//                        .cornerRadius(8)
-//                }
-//            }
+            //
+            //            // 显示接收到的消息
+            //            Text("收到的消息：\(viewModel.controlData)")
+            //                .padding()
+            //
+            //            // 输入框和发送按钮
+            //            HStack {
+            //                TextField("输入消息", text: $messageToSend)
+            //                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            //                    .padding()
+            //
+            //                Button(action: {
+            //                    viewModel.sendMessage(messageToSend) // 发送消息
+            //                    messageToSend = "" // 清空输入框
+            //                }) {
+            //                    Text("发送")
+            //                        .foregroundColor(.white)
+            //                        .padding()
+            //                        .background(Color.blue)
+            //                        .cornerRadius(8)
+            //                }
+            //            }
         }
         .navigationTitle("设备控制")
         .navigationBarTitleDisplayMode(.inline)
@@ -83,9 +83,9 @@ struct DeviceControlPage: View {
 
 struct DeviceControlPageContent: View {
     @ObservedObject var viewModel: DeviceControlVM
-
+    
     var body: some View {
-        VStack {
+        ZStack {
             // 检查 controlData 是否为空
             if viewModel.deviceControls.isEmpty {
                 ZStack{
@@ -100,40 +100,167 @@ struct DeviceControlPageContent: View {
                         .scaledToFill() // 确保填满
                         .ignoresSafeArea(.all) // 确保整个内容忽略安全区域
                 )
+                
+
             } else {
                 // 使用 ZStack 来设置 List 背景为透明
                 ZStack {
                     Color.clear // 设置 ZStack 背景为透明
+                    
                     List {
                         // 过滤出有效的控制项，只显示 control.key 不为 nil 的项
                         ForEach(viewModel.deviceControls.filter { $0.key != nil }) { control in
-                            HStack {
-                                Text(control.key ?? "Unknown")
-                                    .foregroundColor(.black) // 控制项名称
-                                
-                                Spacer()
-                                
-                                Toggle(isOn: Binding(
-                                                   get: { control.value == 1 },
-                                                   set: { newValue in
-                                                       // 当开关状态改变时，发送新的控制状态
-                                                       viewModel.updateControl(control: control, newValue: newValue)
-                                                   }
-                                               )) {
-                                                   EmptyView()
-                                               }
-                                               .toggleStyle(SwitchToggleStyle(tint: .blue)) // 开时蓝色
-                                               .disabled(false) // 启用 Toggle
-                                .padding(.trailing, 8)
+                            
+                            if viewModel.typeCode == "LAMP" && ["3", "4", "5"].contains(control.type ?? "") {
+                                                                // Show NumericInputField if typeCode is LAMP and type is 3, 4, or 5
+                                                                NumericInputField(
+                                                                    label: control.key ?? "Unknown",
+                                                                    value: Binding(
+                                                                        get: { control.value ?? 0 },
+                                                                        set: { newValue in
+                                                                            viewModel.updateDataControl(control: control, newValue: newValue ?? 0)
+                                                                        }
+                                                                    ),
+                                                                    minValue: -100,
+                                                                    maxValue: 100,
+                                                                    onSubmit: {}
+                                                                )
+                                                                .padding(.trailing, 8)
+                                                            }
+                            else{
+                                HStack {
+                                    Text(control.key ?? "Unknown")
+                                        .foregroundColor(.black) // 控制项名称
+                                    
+                                    Spacer()
+                                    
+                                    Toggle(isOn: Binding(
+                                        get: { control.value == 1 },
+                                        set: { newValue in
+                                            // 当开关状态改变时，发送新的控制状态
+                                            viewModel.updateControl(control: control, newValue: newValue)
+                                        }
+                                    )) {
+                                        EmptyView()
+                                    }
+                                    .toggleStyle(SwitchToggleStyle(tint: .blue)) // 开时蓝色
+                                    .disabled(false) // 启用 Toggle
+                                    .padding(.trailing, 8)
+                                }
+                                .padding(.vertical, 16) // 增加上下内边距以增加行高
+                                .frame(height: 60) // 设置每行的高度
+                                .listRowBackground(Color.clear) // 设置每行的背景颜色为透明
                             }
-                            .padding(.vertical, 16) // 增加上下内边距以增加行高
-                            .frame(height: 60) // 设置每行的高度
-                            .listRowBackground(Color.clear) // 设置每行的背景颜色为透明
+                          
                         }
                     }
                     .listStyle(PlainListStyle()) // 使用无样式列表
                     .listRowSeparatorTint(.white) // 设置行分隔符颜色为白色
-
+                    
+                }.background(
+                    Image("center bg")
+                        .resizable()
+                        .scaledToFill() // 确保填满
+                        .ignoresSafeArea(.all) // 确保整个内容忽略安全区域
+                )
+            }
+            
+            if viewModel.showSporeControlInputs {
+                VStack {
+                    // 使用 NumericInputField 组件来动态生成输入框
+                    NumericInputField(
+                        label: "载玻带电机",
+                        value: $viewModel.sporeControls.motor1,
+                        minValue: -100,
+                        maxValue: 100,
+                        onSubmit: {  
+                            if let motor1Value = viewModel.sporeControls.motor1 {
+                                viewModel.getSendSpore(name: "motor1", deviceId: viewModel.deviceId, value: motor1Value)
+                            }
+                        }
+                    )
+                    
+                    NumericInputField(
+                        label: "滑台   上",
+                        value: $viewModel.sporeControls.motor2,
+                        minValue: -100,
+                        maxValue: 100,
+                        onSubmit: {
+                            if let motor2Value = viewModel.sporeControls.motor2 {
+                                viewModel.getSendSpore(name: "motor3", deviceId: viewModel.deviceId, value: motor2Value)
+                            }
+                        }
+                    )
+                    
+                    NumericInputField(
+                        label: "滑台   下",
+                        value: $viewModel.sporeControls.motor3,
+                        minValue: -100,
+                        maxValue: 100,
+                        onSubmit: {
+                            if let motor3Value = viewModel.sporeControls.motor3 {
+                                viewModel.getSendSpore(name: "motor3", deviceId: viewModel.deviceId, value: motor3Value)
+                            }
+                        }
+                    )
+                    
+                    NumericInputField(
+                        label: "吸风风扇",
+                        value: $viewModel.sporeControls.fan1,
+                        minValue: -100,
+                        maxValue: 100,
+                        onSubmit: {
+                            if let fan1Value = viewModel.sporeControls.fan1 {
+                                viewModel.getSendSpore(name: "fan1", deviceId: viewModel.deviceId, value: fan1Value)
+                            }
+                        }
+                    )
+                    
+                    NumericInputField(
+                        label: "补光风",
+                        value: $viewModel.sporeControls.light1,
+                        minValue: -100,
+                        maxValue: 100,
+                        onSubmit: {
+                            if let light1Value = viewModel.sporeControls.light1 {
+                                viewModel.getSendSpore(name: "light1", deviceId: viewModel.deviceId, value: light1Value)
+                            }
+                        }
+                    )
+                    
+                    NumericInputField(
+                        label: "加热",
+                        value: $viewModel.sporeControls.heater,
+                        minValue: -100,
+                        maxValue: 100,
+                        onSubmit: {
+                            if let heaterValue = viewModel.sporeControls.heater {
+                                viewModel.getSendSpore(name: "heater", deviceId: viewModel.deviceId, value: heaterValue)
+                            }
+                        }
+                    )
+                    
+                    NumericInputField(
+                        label: "抓拍",
+                        value: $viewModel.sporeControls.capture,
+                        minValue: -100,
+                        maxValue: 100,
+                        onSubmit: {
+                            if let captureValue = viewModel.sporeControls.capture {
+                                viewModel.getSendSpore(name: "capture", deviceId: viewModel.deviceId, value: captureValue)
+                            }
+                        }
+                    )
+                    
+                    NumericInputField(
+                        label: "重启",
+                        value: $viewModel.sporeControls.restart,
+                        minValue: -100,
+                        maxValue: 100,
+                        onSubmit: {if let restartValue = viewModel.sporeControls.restart {
+                            viewModel.getSendSpore(name: "restart", deviceId: viewModel.deviceId, value: restartValue)
+                        }}
+                    )
                 }.background(
                     Image("center bg")
                         .resizable()
@@ -144,6 +271,12 @@ struct DeviceControlPageContent: View {
         }
     }
 }
+
+func sendNetworkRequest() {
+      // 发送网络请求
+      print("Sending network request with value:")
+      // 这里可以调用你的网络请求逻辑
+  }
 // 自定义 Toggle 样式
 struct SmallSwitchToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -177,7 +310,7 @@ struct SmallSwitchToggleStyle: ToggleStyle {
                                 .padding(.trailing, 6)
                         }
                     }
-                    .animation(.easeInOut(duration: 0.2), value: configuration.isOn)
+                        .animation(.easeInOut(duration: 0.2), value: configuration.isOn)
                 )
                 .onTapGesture {
                     configuration.isOn.toggle() // 切换开关状态

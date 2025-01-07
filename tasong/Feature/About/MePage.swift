@@ -54,12 +54,37 @@ struct MePageContent:View {
         VStack(spacing: 0){
             
             HStack(spacing: 0) {
-                Image("bg me")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 68, height: 68) // 图标大小
-                    .foregroundColor(.blue)
-                    .padding(.vertical, 34) // 控制上下内边距
+                AsyncImage(url: URL(string: "\(Config.IPADDRESS)\(userbean.data?.avatar ?? "")")) { phase in
+                    switch phase {
+                    case .empty:
+                        // 图片正在加载时显示占位符
+                        ProgressView()  // 或者可以显示一个自定义的占位图标
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .frame(width: 68, height: 68)
+                            .foregroundColor(.blue)
+                            .clipShape(Circle())  // 将占位符裁剪为圆形
+                    case .success(let image):
+                        // 加载成功，显示图片
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 68, height: 68)
+                            .clipShape(Circle())  // 将图片裁剪为圆形
+                    case .failure(_):
+                        // 加载失败时显示一个错误占位图像
+                        Image(systemName: "exclamationmark.triangle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 68, height: 68)
+                            .foregroundColor(.red)
+                            .clipShape(Circle())  // 将错误图标裁剪为圆形
+                    @unknown default:
+                        // 处理其他未知情况
+                        EmptyView()
+                    }
+                }
+                .padding(.vertical, 34)
+
                 
                 VStack(spacing: 0) {
                     Text(userbean.data?.userName ?? "")

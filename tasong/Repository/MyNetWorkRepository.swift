@@ -60,6 +60,10 @@ class MyNetWorkRepository {
     }
     
     // MARK: - API 请求封装
+    func getUserDept(deptId: String,completion: @escaping (Result<DeptBean,Error>) -> Void){
+        request(.getUserDept(deptId: deptId), type: DeptBean.self, completion: completion)
+    }
+    
     func getContact(completion: @escaping (Result<UserBean, Error>) -> Void) {
         request(.contact, type: UserBean.self, completion: completion)
     }
@@ -94,8 +98,14 @@ class MyNetWorkRepository {
     
     func getDeviceChart(deviceId: String, completion: @escaping (Result<DeviceChartBean, Error>) -> Void) {
         request(.deviceChart(deviceId: deviceId), type: DeviceChartBean.self, completion: completion)
+    } 
+    func sporeControlInfo(deviceId: String, completion: @escaping (Result<SporeControlBean, Error>) -> Void) {
+        request(.sporeControlInfo(deviceId: deviceId), type: SporeControlBean.self, completion: completion)
     }
     func getDeviceControl(deviceId: String,typecode:String, completion: @escaping (Result<DeviceControlBean, Error>) -> Void) {
         request(.deviceControl(deviceId: deviceId,typeCode: typecode), type: DeviceControlBean.self, completion: completion)
+    }
+    func getSendSpore(name: String,deviceId:String,value: Int, completion: @escaping (Result<DeviceType, Error>) -> Void) {
+        request(.getSendSpore(name: name,deviceId: deviceId,value: value), type: DeviceType.self, completion: completion)
     }
 }

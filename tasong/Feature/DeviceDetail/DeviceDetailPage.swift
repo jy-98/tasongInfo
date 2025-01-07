@@ -117,7 +117,7 @@ struct ItemDevice:View {
                         .lineLimit(1)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.bottom, 24)
+                .padding(.bottom, 10)
                 .padding(.horizontal, 15)
                 .padding(.top, 17)
             }
@@ -134,7 +134,7 @@ struct ItemDevice:View {
                         .lineLimit(1)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.bottom, 15)
+                .padding(.bottom, 5)
                 .padding(.horizontal, 15)
             }
             

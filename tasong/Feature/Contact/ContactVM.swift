@@ -9,33 +9,34 @@ import Foundation
 
 class ContactVM: BaseViewModel {
     
-    @Published var userbean: UserBean // 存储验证码数据
-    @Published var isLoginSuccessful: Bool = false  // 登录状态
+    @Published var deptBean: DeptBean
 
     private let repository: MyNetWorkRepository // 数据仓库依赖
     
     // 初始化时加载数据
     init(repository: MyNetWorkRepository = .shared) {
         self.repository = repository
-        self.userbean = UserBean()
+        self.deptBean = DeptBean()
         super.init()
     }
     
-    func show(){
-        repository.getContact{ [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let deviceType):
-                    print("请求成功：\(String(describing: deviceType))")
-
-
-                case .failure(let error):
-                    self?.errorMessage = "请求失败: \(error.localizedDescription)"
-
+    func show() {
+        if let user = UserDefaults.standard.string(forKey: "deptId"), !user.isEmpty {
+            repository.getUserDept(deptId: user) { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let deptBean):
+                        print("请求公司信息成功：\(String(describing: deptBean))")
+                        self?.deptBean = deptBean  // 更新 deptBean
+                    case .failure(let error):
+                        self?.errorMessage = "请求失败: \(error.localizedDescription)"
+                    }
                 }
             }
         }
     }
+
+    
     
     
 }

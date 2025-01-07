@@ -10,7 +10,10 @@ import Combine
 
 class DeviceControlVM: BaseViewModel, WebSocketDelegate {
     @Published var deviceControls: [ControlBean] = []  // 存储设备详情数据
+    @Published var sporeControls: SporeControlData = SporeControlData()  // 存储设备详情数据
+    @Published var deType: [DeType] = [] // 存储设备详情数据
     @Published var controlData: ReceiveControlBean = ReceiveControlBean()   // 用于接收消息
+    @Published var showSporeControlInputs: Bool = false  // 用于控制输入框是否显示
 
     var deviceId: String  // 设备号 IMEI
     var typeCode: String  // 设备类型 IMEI
@@ -29,6 +32,11 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
         super.init()
         setupWebSocket()  // 初始化 WebSocket 连接
         deviceControl(deviceId: deviceId, typeCode: typeCode)
+        // 只有在 typeCode 为 "LPMS" 时才调用 sporeControl 请求
+               if self.typeCode == "SEAR" {
+                   sporeControl(deviceId: deviceId)
+               }
+               
               setupLifecycleObservers()  // 添加生命周期观察者
     }
     
@@ -42,6 +50,41 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
                     }
                     print("设备控制请求成功：\(newDatas)")
                     self?.deviceControls = newDatas
+                case .failure(let error):
+                    self?.errorMessage = "设备控制请求失败: \(error.localizedDescription)"
+                }
+            }
+        }
+    } 
+    
+    func sporeControl(deviceId: String) {
+        repository.sporeControlInfo(deviceId: deviceId) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let deviceType):
+                    guard let newDatas = deviceType.data, newDatas != self?.sporeControls else {
+                        return // 数据相同，避免不必要的更新
+                    }
+                    print("设备控制请求成功：\(newDatas)")
+                    self?.sporeControls = newDatas
+                    self?.showSporeControlInputs = true  // 只有当 typeCode 为 "LPMS" 时，才显示输入框
+                case .failure(let error):
+                    self?.errorMessage = "设备控制请求失败: \(error.localizedDescription)"
+                }
+            }
+        }
+    }
+    
+    func getSendSpore(name: String, deviceId: String, value: Int) {
+        repository.getSendSpore(name: name, deviceId: deviceId, value: value) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let deviceType):
+                    guard let newDatas = deviceType.rows, newDatas != self?.deType else {
+                        return // 数据相同，避免不必要的更新
+                    }
+                    print("设备控制请求成功：\(newDatas)")
+                    self?.deType = newDatas
                 case .failure(let error):
                     self?.errorMessage = "设备控制请求失败: \(error.localizedDescription)"
                 }
@@ -115,29 +158,21 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
     private func decodeReceivedMessage(_ text: String) {
         let decoder = JSONDecoder()
         do {
+            let SporeControlBean = try decoder.decode(SporeControlBean.self, from: Data(text.utf8))
+            
+            DispatchQueue.main.async {
+                if let SporeControlData = SporeControlBean.data{
+                    self.sporeControls =   SporeControlData // 更新解析后的消息
+                }
+            }
             let control = try decoder.decode(ReceiveControlBean.self, from: Data(text.utf8))
             DispatchQueue.main.async {
                 self.controlData = control  // 更新解析后的消息
-                
-      
-                        // 更新本地数据
+                // 更新本地数据
                 if let index = self.deviceControls.firstIndex(where: { $0.type == control.type }) {
                     self.deviceControls[index].value = control.value
-                    // 将新的开关状态通过 WebSocket 发送到服务器
-//                let updatedMessage : [String : Any] = [
-//                        "type": control.type ?? "",
-//                        "value": (control.value != nil) ? 1 : 0,
-//                        "deviceId": self.deviceId
-//                    ]
-//
-//                    if let jsonData = try? JSONSerialization.data(withJSONObject: updatedMessage, options: []),
-//                       let jsonString = String(data: jsonData, encoding: .utf8) {
-//                        self.sendMessage(jsonString)
-//                    }
                     }
-                        
-                 
-                    
+                
             }
         } catch {
             print("JSON 解析失败: \(error)")
@@ -181,6 +216,25 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
         let updatedMessage : [String : Any] = [
                 "type": control.type ?? "",
                 "value": newValue ? 1 : 0,
+                "deviceId": deviceId
+            ]
+            
+            if let jsonData = try? JSONSerialization.data(withJSONObject: updatedMessage, options: []),
+               let jsonString = String(data: jsonData, encoding: .utf8) {
+                sendMessage(jsonString)
+            }
+        }
+    
+    func updateDataControl(control: ControlBean, newValue: Int) {
+            // 更新本地数据
+            if let index = deviceControls.firstIndex(where: { $0.id == control.id }) {
+                deviceControls[index].value = newValue
+            }
+            
+            // 将新的开关状态通过 WebSocket 发送到服务器
+        let updatedMessage : [String : Any] = [
+                "type": control.type ?? "",
+                "value": newValue,
                 "deviceId": deviceId
             ]
             
