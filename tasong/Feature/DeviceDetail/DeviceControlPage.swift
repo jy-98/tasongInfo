@@ -182,11 +182,11 @@ struct DeviceControlPageContent: View {
                     
                     NumericInputField(
                         label: "滑台   上",
-                        value: $viewModel.sporeControls.motor2,
+                        value: $viewModel.sporeControls.motor3,
                         minValue: -100,
                         maxValue: 100,
                         onSubmit: {
-                            if let motor2Value = viewModel.sporeControls.motor2 {
+                            if let motor2Value = viewModel.sporeControls.motor3 {
                                 viewModel.getSendSpore(name: "motor3", deviceId: viewModel.deviceId, value: motor2Value)
                             }
                         }
@@ -217,7 +217,7 @@ struct DeviceControlPageContent: View {
                     )
                     
                     NumericInputField(
-                        label: "补光风",
+                        label: "补光灯",
                         value: $viewModel.sporeControls.light1,
                         minValue: -100,
                         maxValue: 100,
