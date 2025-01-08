@@ -169,10 +169,11 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
             DispatchQueue.main.async {
                 self.controlData = control  // 更新解析后的消息
                 // 更新本地数据
-                if let index = self.deviceControls.firstIndex(where: { $0.type == control.type }) {
-                    self.deviceControls[index].value = control.value
+                if(control.deviceId == self.deviceId){
+                    if let index = self.deviceControls.firstIndex(where: { $0.type == control.type }) {
+                        self.deviceControls[index].value = control.value
                     }
-                
+                }
             }
         } catch {
             print("JSON 解析失败: \(error)")
