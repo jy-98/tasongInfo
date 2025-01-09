@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MePage: View {
     @StateObject var viewModel:MeVM
+    @State private var isImagePickerPresented: Bool = false
+       @State private var pickedImage: UIImage? = nil // 存储选择的图片
+       @State private var showCamera = false // 控制是否使用相机
+       @State private var showPicker = false // 控制图库选择器
     
     var body: some View {
         VStack(spacing: 0, content: {
             ToMeContent()
-            MePageContent(userbean: viewModel.userbean)
+            MePageContent(viewModel:viewModel,userbean: viewModel.userbean, pickedImage: $pickedImage, isImagePickerPresented: $isImagePickerPresented, showCamera: $showCamera, showPicker: $showPicker)
         })
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top) // 使内容在 VStack 内上对齐
         .background(
@@ -47,44 +52,77 @@ struct ToMeContent:View {
 }
 
 struct MePageContent:View {
+    @ObservedObject var viewModel: MeVM // 添加 @ObservedObject
     var userbean: UserBean
-    
+    @Binding var pickedImage: UIImage?
+    @Binding var isImagePickerPresented: Bool
+    @Binding var showCamera: Bool
+    @Binding var showPicker: Bool
     var body: some View {
         
         VStack(spacing: 0){
             
             HStack(spacing: 0) {
-                AsyncImage(url: URL(string: "\(Config.IPADDRESS)\(userbean.data?.avatar ?? "")")) { phase in
-                    switch phase {
-                    case .empty:
-                        // 图片正在加载时显示占位符
-                        ProgressView()  // 或者可以显示一个自定义的占位图标
-                            .progressViewStyle(CircularProgressViewStyle())
-                            .frame(width: 68, height: 68)
-                            .foregroundColor(.blue)
-                            .clipShape(Circle())  // 将占位符裁剪为圆形
-                    case .success(let image):
-                        // 加载成功，显示图片
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 68, height: 68)
-                            .clipShape(Circle())  // 将图片裁剪为圆形
-                    case .failure(_):
-                        // 加载失败时显示一个错误占位图像
-                        Image(systemName: "exclamationmark.triangle.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 68, height: 68)
-                            .foregroundColor(.red)
-                            .clipShape(Circle())  // 将错误图标裁剪为圆形
-                    @unknown default:
-                        // 处理其他未知情况
-                        EmptyView()
-                    }
-                }
-                .padding(.vertical, 34)
+                Button(action: {
+                                    // 显示图片选择器
+                                    let actionSheet = UIAlertController(title: "选择图片", message: nil, preferredStyle: .actionSheet)
 
+                                    // 相机选项
+                                    actionSheet.addAction(UIAlertAction(title: "拍照", style: .default, handler: { _ in
+                                        self.showCamera = true
+                                    }))
+
+                                    // 图片库选项
+                                    actionSheet.addAction(UIAlertAction(title: "选择图库", style: .default, handler: { _ in
+                                        self.showPicker = true
+                                    }))
+                                    
+                                    // 取消
+                                    actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+
+                                    // 显示 actionSheet
+                                    UIApplication.shared.windows.first?.rootViewController?.present(actionSheet, animated: true, completion: nil)
+                                }) {
+                                    // 展示AsyncImage或已选择的图片
+                                    if let pickedImage = pickedImage {
+                                        Image(uiImage: pickedImage)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 68, height: 68)
+                                            .clipShape(Circle())
+                                            .clipped()  // 避免图像超出圆形
+                                    } else {
+                                        AsyncImage(url: URL(string: "\(Config.IPADDRESS)\(userbean.data?.avatar ?? "")")) { phase in
+                                            switch phase {
+                                            case .empty:
+                                                ProgressView()
+                                                    .progressViewStyle(CircularProgressViewStyle())
+                                                    .frame(width: 68, height: 68)
+                                                    .foregroundColor(.blue)
+                                                    .clipShape(Circle())
+                                            case .success(let image):
+                                                image
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: 68, height: 68)
+                                                    .clipShape(Circle())
+                                                    .clipped()  // 避免图像超出圆形
+                                            case .failure(_):
+                                                Image(systemName: "exclamationmark.triangle.fill")
+                                                    .resizable()
+                                                    .scaledToFill()
+                                                    .frame(width: 68, height: 68)
+                                                    .foregroundColor(.red)
+                                                    .clipShape(Circle())
+                                                    .clipped()  // 避免图像超出圆形
+                                            @unknown default:
+                                                EmptyView()
+                                            }
+                                        }
+                                    }
+                                }
+                                .padding(.vertical, 34)
+                                
                 
                 VStack(spacing: 0) {
                     Text(userbean.data?.userName ?? "")
@@ -221,10 +259,66 @@ struct MePageContent:View {
             .background(Color.white) // 确保背景为白色，与边框颜色形成对比
             
         }
-        
+        .sheet(isPresented: $showPicker, content: {
+                   ImagePicker(sourceType: .photoLibrary) { selectedImage in
+                       self.pickedImage = selectedImage // 更新选择的图片
+                       if let deviceName = selectedImage {
+                           viewModel.uploadImage(image: deviceName) // 上传图片
+                       }
+
+                   }
+               })
+               .sheet(isPresented: $showCamera, content: {
+                   ImagePicker(sourceType: .camera) { selectedImage in
+                       self.pickedImage = selectedImage // 更新拍摄的图片
+                       if let deviceName = selectedImage {
+                           viewModel.uploadImage(image: deviceName) // 上传图片
+                       }
+                   }
+               })
         
     }
 }
+
+
+struct ImagePicker: UIViewControllerRepresentable {
+    var sourceType: UIImagePickerController.SourceType
+    var didSelectImage: (UIImage?) -> Void
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(didSelectImage: didSelectImage)
+    }
+
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = context.coordinator
+        imagePickerController.sourceType = sourceType
+        return imagePickerController
+    }
+
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        var didSelectImage: (UIImage?) -> Void
+        
+        init(didSelectImage: @escaping (UIImage?) -> Void) {
+            self.didSelectImage = didSelectImage
+        }
+
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[.originalImage] as? UIImage {
+                didSelectImage(image)
+            }
+            picker.dismiss(animated: true)
+        }
+
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            didSelectImage(nil)
+            picker.dismiss(animated: true)
+        }
+    }
+}
+
 //#Preview {
 //    MePage()
 //}

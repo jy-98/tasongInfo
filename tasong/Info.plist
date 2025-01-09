@@ -9,5 +9,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>此应用需要使用您的摄像头来拍照或录像</string>
+	<key>AppStoreAppID</key>
+	<string>com.mengchuang.info</string>
 </dict>
 </plist>

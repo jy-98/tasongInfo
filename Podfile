@@ -26,4 +26,7 @@ target 'tasong' do
 
   pod 'Starscream', '~> 4.0.6'
 
+#  pod 'ImagePicker', '~> 1.0'
+
+
 end

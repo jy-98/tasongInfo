@@ -11,6 +11,8 @@ import SwiftUI
 @main
 struct tasongApp: App {
     @ObservedObject var appState = AppState.shared
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate // 绑定 AppDelegate
+
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $appState.rootNavigationPath) {

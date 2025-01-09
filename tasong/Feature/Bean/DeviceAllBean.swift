@@ -39,4 +39,5 @@ struct DeviceAll: Identifiable, Codable, Hashable {
     var updateName: String?
     var updateTime: String?
     var updateUser: Int?
+    var isOnline: String?
 }

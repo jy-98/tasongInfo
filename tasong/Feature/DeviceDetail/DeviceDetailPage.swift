@@ -100,36 +100,79 @@ struct DeviceDetailPageContent:View {
 
 struct ItemDevice:View {
     var device: DeviceAll // 接收单个设备元素
-    
+    @State private var showFullTextAlert = false
+
     var body: some View {
         
         VStack(spacing: 0){
             
             if let deviceName = device.deviceName {
                 HStack(alignment: .firstTextBaseline) { // 使用基线对齐确保文本底部对齐
-                    Text("设备名称：")
-                        .font(.body)
-                        .foregroundColor(.black)
+                    HStack(){
+                        Text("设备名称:")
+                            .font(.body)
+                            .foregroundColor(.black)
+                        
+                        Text(deviceName)
+                            .font(.title3) // 更大字体
+                            .foregroundColor(.blue) // 蓝色文字
+                            .lineLimit(1)
+                            .onLongPressGesture {
+                                    showFullTextAlert = true
+                            }
+                            .alert(isPresented: $showFullTextAlert) {
+                                Alert(title: Text("完整设备名称"), message: Text(deviceName), dismissButton: .default(Text("关闭")))
+                            }
+                    }.frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom, 10)
+                        .padding(.leading, 15)
+                        .padding(.top, 17)
                     
-                    Text(deviceName)
-                        .font(.title2) // 更大字体
-                        .foregroundColor(.blue) // 蓝色文字
-                        .lineLimit(1)
+//                    if let isOnline = device.isOnline {
+                       
+                        HStack(){
+                            if(device.isOnline == "1"){
+                                Image("online")
+                                    .resizable()
+                                    .frame(
+                                        width: 15,
+                                        height: 15
+                                    )
+                                    .padding(.trailing,1)
+                                Text("在线")
+                                    .font(.caption2)
+                                    .foregroundColor(.black)
+                            }else{
+                                Image("offline")
+                                    .resizable()
+                                    .frame(
+                                        width: 15,
+                                        height: 15
+                                    )
+                                    .padding(.trailing,1)
+                                Text("离线")
+                                    .font(.caption2)
+                                    .foregroundColor(.black)
+                            }
+                      
+                         
+                        }.frame( alignment: .trailing)
+                            .padding(.bottom, 10)
+                            .padding(.trailing, 15)
+                            .padding(.top, 17)
+//                    }
+                   
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.bottom, 10)
-                .padding(.horizontal, 15)
-                .padding(.top, 17)
             }
             
             if let deviceId = device.imei {
                 HStack(alignment: .firstTextBaseline) { // 使用基线对齐确保文本底部对齐
-                    Text("设  备  号：")
+                    Text("设  备  号:")
                         .font(.body)
                         .foregroundColor(.black)
                     
                     Text(deviceId)
-                        .font(.title2) // 更大字体
+                        .font(.title3) // 更大字体
                         .foregroundColor(.blue) // 蓝色文字
                         .lineLimit(1)
                 }

@@ -22,6 +22,8 @@ enum MyNetWorkService{
     case getUserDept(deptId:String)
     case sporeControlInfo(deviceId:String)
     case getSendSpore(name:String,deviceId:String,value:Int)
+    case setProfileImage(image: UIImage)
+    
 }
 
 extension MyNetWorkService:TargetType{
@@ -33,40 +35,42 @@ extension MyNetWorkService:TargetType{
         switch self {
         case .register:
             return "/\(Config.relase)/system/user"
-//            return "dev-api/system/user"
+            //            return "dev-api/system/user"
         case .login:
             return "/\(Config.relase)/login"
-//            return "dev-api/login"
+            //            return "dev-api/login"
         case .deviceType:
             return "/\(Config.relase)/system/device/list"
-//            return "dev-api/system/device/list"
+            //            return "dev-api/system/device/list"
         case .deviceInfo:
             return "/\(Config.relase)/system/specific/getSpecificByDevice"
-//            return "dev-api/system/specific/getSpecificByDevice"
+            //            return "dev-api/system/specific/getSpecificByDevice"
         case .deviceData:
             return "/\(Config.relase)/system/mqtt/device/data"
-//            return "dev-api/system/mqtt/device/data"
+            //            return "dev-api/system/mqtt/device/data"
         case .devicePhoto:
             return "/\(Config.relase)/system/mqtt/device/image/info"
-//            return "dev-api/system/mqtt/device/image/info"
+            //            return "dev-api/system/mqtt/device/image/info"
         case .deviceChart:
             return "/\(Config.relase)/system/mqtt/device/statistics"
-//            return "dev-api/system/mqtt/device/statistics"
+            //            return "dev-api/system/mqtt/device/statistics"
         case .verCode:
             return "/\(Config.relase)/captchaImage"
-//            return "dev-api/captchaImage"
+            //            return "dev-api/captchaImage"
         case .contact:
             return "/\(Config.relase)/system/user/profile"
-//            return "dev-api/system/user/profile"
+            //            return "dev-api/system/user/profile"
         case .deviceControl:
             return "/\(Config.relase)/system/mqtt/device/testLight/status"
-//            return "dev-api/system/mqtt/device/testLight/status"
+            //            return "dev-api/system/mqtt/device/testLight/status"
         case .getUserDept(deptId: let deptId):
             return "/\(Config.relase)/system/dept/\(deptId)"
         case .sporeControlInfo:
             return "/\(Config.relase)/system/mqtt/device/spore/control/info"
         case .getSendSpore:
             return "/\(Config.relase)/system/mqtt/device/spore/control"
+        case .setProfileImage:
+            return "/\(Config.relase)/system/user/profile/avatar"
         }
         
     }
@@ -75,7 +79,7 @@ extension MyNetWorkService:TargetType{
         switch self {
         case .deviceType, .deviceInfo, .deviceData, .devicePhoto, .deviceChart, .verCode , .contact,.deviceControl,.getUserDept,.sporeControlInfo,.getSendSpore:
             return .get
-        case .register, .login:
+        case .register, .login, .setProfileImage:
             return .post
         }
     }
@@ -143,6 +147,17 @@ extension MyNetWorkService:TargetType{
             ], encoding: URLEncoding.queryString)
         case .getUserDept(deptId: let deptId):
             return .requestPlain
+            // 添加上传图片的情况
+        case let .setProfileImage(image):
+              // 将UIImage转换为Data（PNG格式）
+              guard let imageData = image.pngData() else {
+                  return .requestPlain // 图片转换失败时直接返回空的请求
+              }
+              
+              // 创建 Multipart 请求体
+              let formData = MultipartFormData(provider: .data(imageData), name: "avatarfile", fileName: "profile_image.png", mimeType: "image/png")
+              
+              return .uploadMultipart([formData])
         }
     }
     

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 class MeVM: BaseViewModel {
     
     @Published var userbean: UserBean
@@ -37,5 +39,23 @@ class MeVM: BaseViewModel {
             }
         }
     }
+    
+    func uploadImage(image: UIImage) {
+        // 使用 repository 的方法进行图片上传
+        repository.uploadProfileImage(image: image) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    // 假设 response 是一个上传成功后的返回数据
+                    print("图片上传成功: \(response)")
+//                    self?.successMessage = "图片上传成功！"
+
+                case .failure(let error):
+                    self?.errorMessage = "上传失败: \(error.localizedDescription)"
+                }
+            }
+        }
+    }
+
     
 }

@@ -108,4 +108,7 @@ class MyNetWorkRepository {
     func getSendSpore(name: String,deviceId:String,value: Int, completion: @escaping (Result<DeviceType, Error>) -> Void) {
         request(.getSendSpore(name: name,deviceId: deviceId,value: value), type: DeviceType.self, completion: completion)
     }
+    func uploadProfileImage(image: UIImage,  completion: @escaping (Result<DeviceType, Error>) -> Void) {
+        request(.setProfileImage(image: image), type: DeviceType.self, completion: completion)
+    }
 }
