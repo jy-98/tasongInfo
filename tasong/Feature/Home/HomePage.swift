@@ -108,21 +108,27 @@ struct ItemDeviceType: View {
         
         ZStack{
             HStack(spacing: 0, content: {
-                if let imageUrl = device.imageUrl, let url = URL(string: imageUrl) {
-                    KFImage(url)
-                        .resizable()
-                        .placeholder {
-                            ProgressView() // Show a loading indicator
-                                .frame(width: 29, height: 29)
-                        }
-                        .cancelOnDisappear(true)
-                        .frame(width: 29, height: 29)
-                } else {
-                    // Fallback image if URL is not valid
-                    Image(systemName: "photo")
-                        .resizable()
-                        .frame(width: 29, height: 29)
+                if let imageUrl = device.imageUrl {
+                    let fullImageUrl = Config.IPADDRESS + imageUrl
+                    if let encodedUrl = fullImageUrl
+                        .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                       let url = URL(string: encodedUrl) {
+                        KFImage(url)
+                            .resizable()
+                            .placeholder {
+                                ProgressView() // Show a loading indicator
+                                    .frame(width: 29, height: 29)
+                            }
+                            .cancelOnDisappear(true)
+                            .frame(width: 29, height: 29)
+                    } else {
+                        // Fallback image if URL is not valid
+                        Image(systemName: "photo")
+                            .resizable()
+                            .frame(width: 29, height: 29)
+                    }
                 }
+
                 
                 Text(device.name ?? "Unknown Device")
                     .foregroundColor(.black)

@@ -92,31 +92,35 @@ struct MePageContent:View {
                                             .clipShape(Circle())
                                             .clipped()  // 避免图像超出圆形
                                     } else {
-                                        AsyncImage(url: URL(string: "\(Config.IPADDRESS)\(userbean.data?.avatar ?? "")")) { phase in
-                                            switch phase {
-                                            case .empty:
-                                                ProgressView()
-                                                    .progressViewStyle(CircularProgressViewStyle())
-                                                    .frame(width: 68, height: 68)
-                                                    .foregroundColor(.blue)
-                                                    .clipShape(Circle())
-                                            case .success(let image):
-                                                image
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .frame(width: 68, height: 68)
-                                                    .clipShape(Circle())
-                                                    .clipped()  // 避免图像超出圆形
-                                            case .failure(_):
-                                                Image(systemName: "exclamationmark.triangle.fill")
-                                                    .resizable()
-                                                    .scaledToFill()
-                                                    .frame(width: 68, height: 68)
-                                                    .foregroundColor(.red)
-                                                    .clipShape(Circle())
-                                                    .clipped()  // 避免图像超出圆形
-                                            @unknown default:
-                                                EmptyView()
+                                        if let encodedUrl = "\(Config.IPADDRESS)\(userbean.data?.avatar ?? "")"
+                                            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                                           let url = URL(string: encodedUrl) {
+                                            AsyncImage(url: url) { phase in
+                                                switch phase {
+                                                case .empty:
+                                                    ProgressView()
+                                                        .progressViewStyle(CircularProgressViewStyle())
+                                                        .frame(width: 68, height: 68)
+                                                        .foregroundColor(.blue)
+                                                        .clipShape(Circle())
+                                                case .success(let image):
+                                                    image
+                                                        .resizable()
+                                                        .scaledToFill()
+                                                        .frame(width: 68, height: 68)
+                                                        .clipShape(Circle())
+                                                        .clipped()  // 避免图像超出圆形
+                                                case .failure(_):
+                                                    Image(systemName: "exclamationmark.triangle.fill")
+                                                        .resizable()
+                                                        .scaledToFill()
+                                                        .frame(width: 68, height: 68)
+                                                        .foregroundColor(.red)
+                                                        .clipShape(Circle())
+                                                        .clipped()  // 避免图像超出圆形
+                                                @unknown default:
+                                                    EmptyView()
+                                                }
                                             }
                                         }
                                     }
