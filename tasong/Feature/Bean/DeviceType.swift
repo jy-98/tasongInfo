@@ -27,6 +27,7 @@ struct DeType: Identifiable, Codable, Hashable {
 //    var information: String?
 //    var isDelete: Bool?
     var name: String?
+//    var code_type: String?
 //    var regionId: String?
 //    var regionName: String?
 //    var remark: String?

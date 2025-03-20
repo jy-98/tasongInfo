@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F671D5B2D841AEF009DF862 /* GetConfigBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F671D5A2D841AEF009DF862 /* GetConfigBean.swift */; };
+		9F6CE6562D76950000F575A7 /* SmartBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CE6552D76950000F575A7 /* SmartBean.swift */; };
+		9F6CE6582D7841F800F575A7 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CE6572D7841F800F575A7 /* BottomSheetView.swift */; };
+		9F6CE65A2D7845DE00F575A7 /* ModernThreeLevelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6CE6592D7845DE00F575A7 /* ModernThreeLevelPicker.swift */; };
 		9F79EA7F2CC8888E008BFD0E /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F79EA7E2CC8888E008BFD0E /* BaseResponse.swift */; };
 		9F8B651E2CC745B900F28DA0 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B651D2CC745B900F28DA0 /* Toast.swift */; };
 		9FCE33722CC6064D00D2D8EC /* tasongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE33712CC6064D00D2D8EC /* tasongApp.swift */; };
@@ -65,6 +69,10 @@
 
 /* Begin PBXFileReference section */
 		280F9A7DF6BF114356D8CA24 /* Pods-tasong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tasong.release.xcconfig"; path = "Target Support Files/Pods-tasong/Pods-tasong.release.xcconfig"; sourceTree = "<group>"; };
+		9F671D5A2D841AEF009DF862 /* GetConfigBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConfigBean.swift; sourceTree = "<group>"; };
+		9F6CE6552D76950000F575A7 /* SmartBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBean.swift; sourceTree = "<group>"; };
+		9F6CE6572D7841F800F575A7 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		9F6CE6592D7845DE00F575A7 /* ModernThreeLevelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernThreeLevelPicker.swift; sourceTree = "<group>"; };
 		9F79EA7E2CC8888E008BFD0E /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		9F8B651D2CC745B900F28DA0 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		9FCE336E2CC6064D00D2D8EC /* tasong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tasong.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				9FD170542D2D07410074FBCF /* NumericInputField.swift */,
+				9F6CE6572D7841F800F575A7 /* BottomSheetView.swift */,
+				9F6CE6592D7845DE00F575A7 /* ModernThreeLevelPicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -249,6 +259,8 @@
 				9FDA15CB2CE477B20001998A /* UserBean.swift */,
 				9FDA15CD2CE477CB0001998A /* VerCodeBean.swift */,
 				9FD1704F2D2CBF9F0074FBCF /* DeptBean.swift */,
+				9F6CE6552D76950000F575A7 /* SmartBean.swift */,
+				9F671D5A2D841AEF009DF862 /* GetConfigBean.swift */,
 			);
 			path = Bean;
 			sourceTree = "<group>";
@@ -516,6 +528,7 @@
 				9FDA15BE2CE477340001998A /* DeviceChartBean.swift in Sources */,
 				9FDA15B62CE4769E0001998A /* ContactPage.swift in Sources */,
 				9FDA15C82CE477940001998A /* LoginBean.swift in Sources */,
+				9F6CE65A2D7845DE00F575A7 /* ModernThreeLevelPicker.swift in Sources */,
 				9FDA15C22CE477790001998A /* DeviceDataBean.swift in Sources */,
 				9FDA15B42CE476310001998A /* DeviceStatVM.swift in Sources */,
 				9FCE33742CC6064D00D2D8EC /* ContentView.swift in Sources */,
@@ -530,6 +543,7 @@
 				9FDA15BC2CE477270001998A /* DeviceAllBean.swift in Sources */,
 				9FDA15A82CE475430001998A /* DeviceDataVM.swift in Sources */,
 				9FDA15942CE474590001998A /* RegisterPage.swift in Sources */,
+				9F6CE6582D7841F800F575A7 /* BottomSheetView.swift in Sources */,
 				9FCE33722CC6064D00D2D8EC /* tasongApp.swift in Sources */,
 				9FDA15962CE4746C0001998A /* RegisterVM.swift in Sources */,
 				9FDA15CC2CE477B20001998A /* UserBean.swift in Sources */,
@@ -555,7 +569,9 @@
 				9FDA15902CE4741C0001998A /* SplashPage.swift in Sources */,
 				9FDA15AC2CE475670001998A /* DeviceDetailVM.swift in Sources */,
 				9FDA15D42CE479850001998A /* MeVM.swift in Sources */,
+				9F6CE6562D76950000F575A7 /* SmartBean.swift in Sources */,
 				9FDA15B02CE475E30001998A /* DevicePhotoVM.swift in Sources */,
+				9F671D5B2D841AEF009DF862 /* GetConfigBean.swift in Sources */,
 				9FDA15CE2CE477CB0001998A /* VerCodeBean.swift in Sources */,
 				9FDA15982CE474930001998A /* MainPage.swift in Sources */,
 				9FDA15AE2CE475840001998A /* DevicePhotoPage.swift in Sources */,

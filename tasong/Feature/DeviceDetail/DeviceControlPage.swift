@@ -83,7 +83,8 @@ struct DeviceControlPage: View {
 
 struct DeviceControlPageContent: View {
     @ObservedObject var viewModel: DeviceControlVM
-    
+    @State private var showSheet = false // 是否展示弹框
+
     var body: some View {
         ZStack {
             // 检查 controlData 是否为空
@@ -164,6 +165,24 @@ struct DeviceControlPageContent: View {
                         .ignoresSafeArea(.all) // 确保整个内容忽略安全区域
                 )
             }
+
+            if viewModel.showAddSmartControl {
+                VStack {
+                    
+
+                        ModernThreeLevelPicker(viewModel: viewModel)
+                    
+                    
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity) // 让 VStack 撑满整个屏幕
+                .background(
+                    Image("center bg")
+                        .resizable()
+                        .scaledToFill() // 确保填满
+                        .ignoresSafeArea(.all) // 确保整个内容忽略安全区域
+                )
+            }
+            
             
             if viewModel.showSporeControlInputs {
                 VStack {

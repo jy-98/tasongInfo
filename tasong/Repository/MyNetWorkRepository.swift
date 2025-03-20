@@ -111,4 +111,13 @@ class MyNetWorkRepository {
     func uploadProfileImage(image: UIImage,  completion: @escaping (Result<DeviceType, Error>) -> Void) {
         request(.setProfileImage(image: image), type: DeviceType.self, completion: completion)
     }
+    func getSmartControl(deviceId: String, completion: @escaping (Result<SmartBean, Error>) -> Void) {
+        request(.getSmartControl(deviceId: deviceId), type: SmartBean.self, completion: completion)
+    }
+    func sendOrder(data: [String],deviceId:String,startTime:String,sensorTime:String, completion: @escaping (Result<DeviceImageBean, Error>) -> Void) {
+        request(.sendOrder(data: data, deviceId: deviceId, startTime: startTime, sensorTime: sensorTime), type: DeviceImageBean.self, completion: completion)
+    }
+    func getConfig(deviceId: String, completion: @escaping (Result<GetConfigBean, Error>) -> Void) {
+        request(.getConfig(deviceId: deviceId), type: GetConfigBean.self, completion: completion)
+    }
 }

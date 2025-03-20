@@ -14,7 +14,10 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
     @Published var deType: [DeType] = [] // 存储设备详情数据
     @Published var controlData: ReceiveControlBean = ReceiveControlBean()   // 用于接收消息
     @Published var showSporeControlInputs: Bool = false  // 用于控制输入框是否显示
-
+    @Published var showAddSmartControl: Bool = false  // 用于控制新增按钮是否显示
+    @Published var smartData:  [SmartData] = []
+    @Published var configs:  Configs = Configs()
+    
     var deviceId: String  // 设备号 IMEI
     var typeCode: String  // 设备类型 IMEI
     private var socket: WebSocket?  // WebSocket 实例
@@ -23,7 +26,13 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
 
     private var isTryingToReconnect = false  // 避免重复连接
     private let repository: MyNetWorkRepository  // 数据仓库依赖
+    
+    @Published var selectedItems: [SmartDataBean] = []
+    @Published var selectedStringItems: [String] = [] // ✅ 存储用设备id
 
+    func updateSelectedItems() {
+            selectedItems = extractCheckedSmartData(from: smartData)
+    }
     // 初始化时加载数据
     init(deviceId: String,typeCode:String,repository: MyNetWorkRepository = .shared) {
         self.repository = repository
@@ -33,11 +42,67 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
         setupWebSocket()  // 初始化 WebSocket 连接
         deviceControl(deviceId: deviceId, typeCode: typeCode)
         // 只有在 typeCode 为 "LPMS" 时才调用 sporeControl 请求
-               if self.typeCode == "SEAR" {
-                   sporeControl(deviceId: deviceId)
-               }
-               
-              setupLifecycleObservers()  // 添加生命周期观察者
+        if self.typeCode == "SEAR" {
+            sporeControl(deviceId: deviceId)
+        }
+        if self.typeCode == "SMARTCONTROL" {
+            showAddSmartControl = true
+            getSmartControl(deviceId: deviceId)
+            getConfig(deviceId: deviceId)
+        }
+        
+        setupLifecycleObservers()  // 添加生命周期观察者
+    }
+    
+    func extractCheckedSmartData(from data: [SmartData]) -> [SmartDataBean] {
+        for province in data {
+            for city in province.children ?? [] {
+                for district in city.children ?? [] {
+                    if district.checked {
+                        let newBean = SmartDataBean(
+                            id: UUID().uuidString, // 生成唯一 ID
+                            firstName: province.name,
+                            addressName: city.name,
+                            sensorName: district.name
+                        )
+                        selectedItems.append(newBean)
+                        selectedStringItems.append(district.id ?? "")
+                    }
+                }
+            }
+        }
+        return selectedItems
+    }
+    
+    func sendOrder(data: [String],deviceId:String,startTime:String,sensorTime:String){
+        repository.sendOrder(data: data, deviceId: deviceId, startTime: startTime, sensorTime: sensorTime){ [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let deviceType):
+                    print("设备控制请求成功：\(String(describing: deviceType.data))")
+                case .failure(let error):
+                    self?.errorMessage = "设备控制请求失败: \(error.localizedDescription)"
+                }
+            }
+        }
+
+    }
+    
+    func getConfig(deviceId: String){
+        repository.getConfig(deviceId: deviceId) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let deviceType):
+                    guard let newDatas = deviceType.data, newDatas != self?.configs else {
+                        return // 数据相同，避免不必要的更新
+                    }
+                    print("设备获取请求成功：\(newDatas)")
+                    self?.configs = newDatas
+                case .failure(let error):
+                    self?.errorMessage = "设备获取请求失败: \(error.localizedDescription)"
+                }
+            }
+        }
     }
     
     func deviceControl(deviceId: String,typeCode:String) {
@@ -56,6 +121,22 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
             }
         }
     } 
+    //新增按钮的三级列表
+    func getSmartControl(deviceId:String){
+        repository.getSmartControl(deviceId: deviceId) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let success):
+                    guard let smartContorlData = success.data , smartContorlData != self?.smartData else{
+                        return
+                    }              
+                    print("设备控制请求成功：\(String(describing: success.data))")
+                    self?.smartData = smartContorlData
+                case .failure(let failure):
+                    self?.errorMessage = "设备控制请求失败: \(failure.localizedDescription)"                }
+            }
+        }
+    }
     
     func sporeControl(deviceId: String) {
         repository.sporeControlInfo(deviceId: deviceId) { [weak self] result in

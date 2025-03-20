@@ -23,7 +23,9 @@ enum MyNetWorkService{
     case sporeControlInfo(deviceId:String)
     case getSendSpore(name:String,deviceId:String,value:Int)
     case setProfileImage(image: UIImage)
-    
+    case getSmartControl(deviceId:String)
+    case sendOrder(data:[String],deviceId:String,startTime:String,sensorTime:String)
+    case getConfig(deviceId:String)
 }
 
 extension MyNetWorkService:TargetType{
@@ -71,15 +73,21 @@ extension MyNetWorkService:TargetType{
             return "/\(Config.relase)/system/mqtt/device/spore/control"
         case .setProfileImage:
             return "/\(Config.relase)/system/user/profile/avatar"
+        case .getSmartControl:
+            return "/\(Config.relase)/system/mission/getData"
+        case .sendOrder:
+            return "/\(Config.relase)/system/mission/sendOrder"
+        case .getConfig:
+            return "/\(Config.relase)/system/mission/getConfig"
         }
         
     }
     
     var method: Moya.Method {
         switch self {
-        case .deviceType, .deviceInfo, .deviceData, .devicePhoto, .deviceChart, .verCode , .contact,.deviceControl,.getUserDept,.sporeControlInfo,.getSendSpore:
+        case .deviceType, .deviceInfo, .deviceData, .devicePhoto, .deviceChart, .verCode , .contact,.deviceControl,.getUserDept,.sporeControlInfo,.getSendSpore,.sendOrder,.getConfig:
             return .get
-        case .register, .login, .setProfileImage:
+        case .register, .login, .setProfileImage,.getSmartControl:
             return .post
         }
     }
@@ -158,6 +166,25 @@ extension MyNetWorkService:TargetType{
               let formData = MultipartFormData(provider: .data(imageData), name: "avatarfile", fileName: "profile_image.png", mimeType: "image/png")
               
               return .uploadMultipart([formData])
+        case .getSmartControl(deviceId: let deviceId):
+            //新增智能检测配置
+            let parameters: [String: Any] = [
+                "deviceId": deviceId,
+            ]
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
+            
+        case .sendOrder(data: let data, deviceId: let deviceId, startTime: let startTime, sensorTime: let sensorTime):
+            return .requestParameters(parameters: [
+                    "data" : data,
+                    "deviceId" : deviceId,
+                    "startTime" : startTime,
+                    "sensorTime" : sensorTime,
+                ], encoding: URLEncoding.queryString)
+            
+        case .getConfig(deviceId: let deviceId):
+            return .requestParameters(parameters: [
+                "deviceId": deviceId,
+            ], encoding: URLEncoding.queryString)
         }
     }
     
