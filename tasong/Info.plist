@@ -10,7 +10,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>此应用需要使用您的摄像头来拍照或录像</string>
+	<string>该应用程序需要使用您的摄像头来拍照，以更换头像。</string>
 	<key>AppStoreAppID</key>
 	<string>com.mengchuang.info</string>
 </dict>
