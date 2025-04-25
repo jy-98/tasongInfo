@@ -12,9 +12,16 @@ struct DevicePhotoPage: View {
     
     @StateObject var viewModel:DevicePhotoVM
     @Environment(\.presentationMode) var presentationMode // 环境变量，用于控制页面返回
+   
     
     init(deviceId: String) {
-        _viewModel = StateObject(wrappedValue: DevicePhotoVM(deviceId: deviceId)) // 初始化 @StateObject
+        _viewModel = StateObject(wrappedValue: DevicePhotoVM(deviceId: deviceId, completion: { success in
+            if success {
+                print("数据加载成功")
+            } else {
+                print("数据加载失败")
+            }
+        })) // 初始化 @StateObject
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground() // 移除默认背景
@@ -31,7 +38,7 @@ struct DevicePhotoPage: View {
     }
     
     var body: some View {
-        DevicePhotoDataPageContent(devicePhotoAll: viewModel.devicePhotoDatas)
+        DevicePhotoDataPageContent(viewModel: viewModel,devicePhotoAll: viewModel.devicePhotoDatas)
             .navigationTitle("设备图像")  // 设置页面标题
             .navigationBarTitleDisplayMode(.inline) // 控制标题显示模式 (large/inline)
             .navigationBarBackButtonHidden(true) // 隐藏默认返回按钮
@@ -54,6 +61,9 @@ struct DevicePhotoPage: View {
 }
 
 struct DevicePhotoDataPageContent:View{
+    @ObservedObject var viewModel: DevicePhotoVM
+    @State private var isRefreshing = false
+    @State private var isLoadingMore = false
     var devicePhotoAll:[DataPhoto]?
     var body: some View {
         if let dataData = devicePhotoAll, !dataData.isEmpty{
@@ -65,6 +75,19 @@ struct DevicePhotoDataPageContent:View{
                         }
                     }
                 })
+                .overlay(GeometryReader { geometry in
+                    Color.clear
+                        .onChange(of: geometry.frame(in: .global).maxY) { value in
+                            // 判断是否已经到达底部
+                            if value <= UIScreen.main.bounds.height {
+                                loadNextPage(deviceId: viewModel.deviceId) // 当内容完全显示时，加载更多数据
+                            }
+                        }
+                })
+            }
+            .refreshable {
+                isRefreshing = true
+                loadData(deviceId: viewModel.deviceId,pageNum: 1)  // 重置为第一页并重新加载
             }
             .background(
                 Image("center bg")
@@ -88,6 +111,33 @@ struct DevicePhotoDataPageContent:View{
             
         }
         
+    }
+    // 加载第一页数据
+    func loadData(deviceId:String,pageNum: Int) {
+        viewModel.loadData(deviceId: deviceId,pageNum: pageNum, pageSize: 10) { success in
+            isRefreshing = false  // 刷新结束
+            if success {
+                print("加载成功")
+            } else {
+                print("加载失败")
+            }
+        }
+    }
+
+    // 加载更多数据
+    func loadNextPage(deviceId:String) {
+        guard !isLoadingMore else { return }
+        isLoadingMore = true
+        
+        let nextPage = viewModel.currentPage + 1
+        viewModel.loadData(deviceId: deviceId,pageNum: nextPage, pageSize: 10) { success in
+            isLoadingMore = false
+            if success {
+                print("加载更多成功")
+            } else {
+                print("加载更多失败")
+            }
+        }
     }
 }
 

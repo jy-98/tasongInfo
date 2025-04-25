@@ -79,7 +79,7 @@ class DeviceControlVM: BaseViewModel, WebSocketDelegate {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let deviceType):
-                    print("设备控制请求成功：\(String(describing: deviceType.data))")
+                    print("设备控制请求成功：\(String(describing: deviceType.rows))")
                 case .failure(let error):
                     self?.errorMessage = "设备控制请求失败: \(error.localizedDescription)"
                 }

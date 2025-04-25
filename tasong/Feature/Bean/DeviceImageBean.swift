@@ -10,7 +10,7 @@ import Foundation
 struct DeviceImageBean: Identifiable, Codable, Hashable, BaseResponse  {
     var id: String?
     var code: Int?
-    var `data`: [DataPhoto]?
+    var rows: [DataPhoto]?
     var msg: String?
 }
 

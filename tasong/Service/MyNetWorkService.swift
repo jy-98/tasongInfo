@@ -42,7 +42,7 @@ extension MyNetWorkService:TargetType{
             return "/\(Config.relase)/login"
             //            return "dev-api/login"
         case .deviceType:
-            return "/\(Config.relase)/system/device/list"
+            return "/\(Config.relase)/system/device/all/list"
             //            return "dev-api/system/device/list"
         case .deviceInfo:
             return "/\(Config.relase)/system/specific/getSpecificByDevice"
